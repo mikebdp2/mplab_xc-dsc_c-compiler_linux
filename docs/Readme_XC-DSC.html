@@ -1,0 +1,838 @@
+<html>
+<head>
+ 
+       <script src="jquery.js"></script>
+
+        <script>
+            (function ($) {
+                $.include = function (url) {
+                    $.ajax({
+                        url: url,
+                        async: false,
+                        success: function (result) {
+                            document.write(result);
+                        }
+                    });
+                };
+            }(jQuery));
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                alert($("#test").text());
+            });
+        </script>
+
+<title>Release Notes for MPLAB XC-DSC C Compiler v3.00</title>
+<style type="text/css">
+span {
+        font-family: Arial;
+        color: #000000;
+        background: #FFFFFF;
+        font-size: 10pt;
+}
+pre {
+        font-family: monospace;
+        color: #000000;
+        background: #FFFFFF;
+        font-size: 10pt;
+}
+p.Heading0, li.Heading0, div.Heading0, span.Heading0 {
+        font-size:14.0pt;
+        font-family:Arial;
+        font-weight:bold;
+}
+h1 {
+        margin-top:12.0pt;
+        margin-right:0in;
+        margin-bottom:3.0pt;
+        margin-left:.3in;
+        text-indent:-.3in;
+        page-break-after:avoid;
+        tab-stops:list .3in;
+        font-size:14.0pt;
+        font-family:Arial;
+}
+h2 {
+        margin-top:12.0pt;
+        margin-right:0in;
+        margin-bottom:3.0pt;
+        margin-left:.4in;
+        text-indent:-.4in;
+        page-break-after:avoid;
+        mso-outline-level:2;
+        tab-stops:list .4in;
+        font-size:12.0pt;
+        font-family:Arial;
+}
+DL, DT, ol, ul, li, DD {
+    list-style-position: outside;
+}
+pre {
+    font-family: monospace;
+    font-size: 10pt;
+}
+table {
+    font-size: 10pt;
+}
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+<span><div class=Heading0>Release Notes for MPLAB<sup>&reg;</sup> XC-DSC C 
+                          Compiler<br /></div>
+v3.00<br />
+ Nov  1 2023  <br />
+<br />
+<div class=Heading0>Table of Contents</div>
+
+<ol>
+<li><a href="#Overview">Overview</a></li>
+<li><a href="#GPL">GNU General Public License</a></li>
+<li><a href="#OS">System Requirements</a></li>
+<li><a href="#Devices">Devices Supported</a></li>
+<li><a href="#Install">Installation and Upgrades</a></li>
+<li><a href="#FusaDocument">Functional Safety Manual</a></li>
+<li><a href="#Document">MPLAB XC-DSC Language Tools Documentation</a></li>
+<li><a href="#WhatsNew">What's New in this Release</a></li>
+<li><a href="#Migration">Migration Issues</a></li>
+<li><a href="#DocUpdates">Documentation Updates</a></li>
+<li><a href="#Fixed">Fixed Issues</a></li>
+<li><a href="#Limitations">Limitations</a></li>
+<li><a href="#EnvChanges">Environment Variables Modified</a></li>
+<li><a href="#Support">Customer Support</a></li>
+</ol>
+
+<hr><br>
+
+<ol style="list-style-type:decimal;">
+<li class="Heading0"><h1><a name="Overview">
+Overview
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<p>The XC-DSC language tools consist of a compiler (xc-dsc-gcc.exe), an
+   assembler (xc-dsc-as.exe), a linker (xc-dsc-ld.exe), and an archiver/
+   librarian (xc-dsc-ar.exe). Additional tools distributed with this
+   release include a binary to Intel Hex converter (xc-dsc-bin2hex.exe)
+   and other utilities.</p>
+
+<p>The XC-DSC language tool official names are:
+   <ul><li>MPLAB XC-DSC C Compiler</li>
+       <li>MPLAB XC-DSC Assembler</li>
+       <li>MPLAB XC-DSC Object Linker</li>
+       <li>MPLAB XC-DSC Object Archiver/Librarian</li>
+   </ul>
+
+</p>
+
+<p>As described in the user's guides, all of the language tools are
+   sensitive to case on the command-line, including the case of file
+   names. In particular, the C compiler shell (xc-dsc-gcc) requires
+   that C source files be named on the command-line with a lower-case
+   .c extension. If an upper-case .C filename extension is used,
+   the compiler assumes that the file is a C++ file, which is not
+   supported.</p>
+<p>If this release of the Microchip MPLAB XC-DSC C compiler is a functional 
+   safety compiler, this compiler requires a functional safety license in 
+   order to operate.  Once activated, all optimization levels and compiler 
+   features are available.</p>
+
+</li>
+</span>
+<li class="Heading0"><h1><a name="GPL">
+GNU General Public License
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<p>With the exceptions noted below, the XC-DSC language tools are written and
+   distributed under the GNU General Public License (GPL) which means
+   that its source code is freely distributed and available to the
+   public.</p>
+
+<p>The source for the tools under the GNU GPL may be downloaded
+   separately from the Microchip WWW web page. You may read the
+   GNU GPL in the file named COPYING located the top level of your
+   install directory. A general discussion of principles underlying
+   the GPL may be found at
+   <a href="https://www.gnu.org/copyleft">www.gnu.org/copyleft</a>.</p>
+
+<p>The following tools are covered by the GNU GPL:</p>
+<table>
+<tr>
+   <td>elf-ar</td> <td>elf-as</td> <td>elf-bin2hex</td> <td>elf-cc1</td>
+</tr>
+<tr>
+   <td>elf-cpp</td> <td>elf-gcc</td> <td>elf-objcopy</td> <td>elf-objdump</td>
+</tr>
+<tr>
+   <td>elf-ranlib</td> <td>elf-readelf</td> <td>elf-strip</td> <td>xc-dsc-strings</td>
+</tr>
+</table>
+
+<p>Other tools, including support code provided for the header files, 
+   linker scripts, and run-time libraries are exceptions to the GPL, and 
+   therefore not covered under the GPL.</p>
+
+</li>
+</span>
+<li class="Heading0"><h1><a name="OS">
+System Requirements
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<ul>
+<li>
+  <p>The MPLAB XC-DSC C compiler and the licensing software they utilize are 
+available for a variety of operating systems, including 64-bit versions of the
+ following: Professional editions of Microsoft Windows 10; Ubuntu 18.04;  and  
+MacOS  13.2  Ventura.</p></li>
+<li>
+  <p>If you are running a network license server, only computers with operating 
+  systems supported by the compilers may be used to host the license server. As 
+  of xclm version 2.0, the network license server can be installed on a 
+  Microsoft Windows Server platform, but the license server does not need to 
+  run on a server version of the operating system.</p></li>
+</ul>
+</li>
+</span>
+<li class="Heading0"><h1><a name="Devices">
+Devices Supported
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+<p class="c1"><strong>
+  Part Support via <em>Device Family Packs (DFPs)</em></strong> -- For now, 
+  part support files such as the default device-specific startup code and 
+  linker script are packaged with the compiler. However, when building a 
+  project in MPLAB X v5.30 and later, these files are packaged in a "pack", 
+  known as a 
+  <a target="external" href= "https://microchipdeveloper.com/mplabx:projects-packs">Device Family Pack (DFP)</a>. 
+  This means that part-support files are decoupled from an MPLAB XC-DSC 
+  compiler toolchain release and can therefore be added and updated for bug 
+  fixes and improvements outside of a full MPLAB XC-DSC release. The DFP 
+  location is passed to MPLAB XC-DSC via the <tt>-mdfp=</tt><em>path</em> 
+  option.  See the pack manager in MPLAB X for details about available DFPs. 
+  You can also download DFPs outside of MPLAB X by visiting 
+  <a target="external" href= "https://packs.download.microchip.com/">https://packs.download.microchip.com</a> in your favorite web browser.</p>
+
+<!-- snip -->
+<div name="output.html">
+<p>The following <b>30F </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>30F10xx</th> <th>30F20xx</th> <th>30F30xx</th> <th>30F40xx</th> <th>30F50xx</th> <th>30F60xx</th> 
+</tr> 
+<tr>  <td> 30F1010</td> <td> 30F2010</td> <td> 30F3010</td> <td></td>  <td></td>  <td> 30F6010[A]</td></tr>
+<tr>  <td></td>  <td> 30F2011</td> <td> 30F3011</td> <td> 30F4011</td> <td> 30F5011</td> <td> 30F6011[A]</td></tr>
+<tr>  <td></td>  <td> 30F2012</td> <td> 30F3012</td> <td> 30F4012</td> <td></td>  <td> 30F6012[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td> 30F3013</td> <td> 30F4013</td> <td> 30F5013</td> <td> 30F6013[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td> 30F3014</td> <td></td>  <td></td>  <td> 30F6014[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 30F5015</td> <td> 30F6015</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 30F5016</td> <td></td> </tr>
+<tr>  <td></td>  <td> 30F2020</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 30F2023</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+</table>
+<p>The following <b>33CDV MC </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 64K devices</th> 
+</tr> 
+<tr>  <td> 33CDV64MC106</td></tr>
+</table>
+<p>The following <b>33CDV MP </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>128K devices</th> <th>256K devices</th> 
+</tr> 
+<tr>  <td> 33CDV128MP506</td> <td> 33CDV256MP506</td></tr>
+</table>
+<p>The following <b>33CDVC MP </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>128K devices</th> <th>256K devices</th> 
+</tr> 
+<tr>  <td> 33CDVC128MP506</td> <td> 33CDVC256MP506</td></tr>
+</table>
+<p>The following <b>33CDVL MC </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 64K devices</th> 
+</tr> 
+<tr>  <td> 33CDVL64MC106</td></tr>
+</table>
+<p>The following <b>33CH MP </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> <th>512K devices</th> <th>1024K devices</th> 
+</tr> 
+<tr>  <td> 33CH64MP202[S1]</td> <td> 33CH128MP202[S1]</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CH64MP203[S1]</td> <td> 33CH128MP203[S1]</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CH64MP205[S1]</td> <td> 33CH128MP205[S1]</td> <td> 33CH256MP205[S1]</td> <td> 33CH512MP205[S1]</td> <td></td> </tr>
+<tr>  <td> 33CH64MP206[S1]</td> <td> 33CH128MP206[S1]</td> <td> 33CH256MP206[S1]</td> <td> 33CH512MP206[S1]</td> <td></td> </tr>
+<tr>  <td> 33CH64MP208[S1]</td> <td> 33CH128MP208[S1]</td> <td> 33CH256MP208[S1]</td> <td> 33CH512MP208[S1]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33CH256MP218[S1]</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP305[S1]</td> <td> 33CH1024MP305[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP306[S1]</td> <td> 33CH1024MP306[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP308[S1]</td> <td> 33CH1024MP308[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP405[S1]</td> <td> 33CH1024MP405[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP406[S1]</td> <td> 33CH1024MP406[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP408[S1]</td> <td> 33CH1024MP408[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP410[S1]</td> <td> 33CH1024MP410[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP412[S1]</td> <td> 33CH1024MP412[S1]</td></tr>
+<tr>  <td> 33CH64MP502[S1]</td> <td> 33CH128MP502[S1]</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CH64MP503[S1]</td> <td> 33CH128MP503[S1]</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CH64MP505[S1]</td> <td> 33CH128MP505[S1]</td> <td> 33CH256MP505[S1]</td> <td> 33CH512MP505[S1]</td> <td></td> </tr>
+<tr>  <td> 33CH64MP506[S1]</td> <td> 33CH128MP506[S1]</td> <td> 33CH256MP506[S1]</td> <td> 33CH512MP506[S1]</td> <td></td> </tr>
+<tr>  <td> 33CH64MP508[S1]</td> <td> 33CH128MP508[S1]</td> <td> 33CH256MP508[S1]</td> <td> 33CH512MP508[S1]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP605[S1]</td> <td> 33CH1024MP605[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP606[S1]</td> <td> 33CH1024MP606[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP608[S1]</td> <td> 33CH1024MP608[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP705[S1]</td> <td> 33CH1024MP705[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP706[S1]</td> <td> 33CH1024MP706[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP708[S1]</td> <td> 33CH1024MP708[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP710[S1]</td> <td> 33CH1024MP710[S1]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CH512MP712[S1]</td> <td> 33CH1024MP712[S1]</td></tr>
+</table>
+<p>The following <b>33CK MC </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> 
+</tr> 
+<tr>  <td> 33CK32MC102</td> <td> 33CK64MC102</td> <td> 33CK128MC102</td> <td> 33CK256MC102</td></tr>
+<tr>  <td> 33CK32MC103</td> <td> 33CK64MC103</td> <td> 33CK128MC103</td> <td> 33CK256MC103</td></tr>
+<tr>  <td> 33CK32MC105</td> <td> 33CK64MC105</td> <td> 33CK128MC105</td> <td> 33CK256MC105</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33CK128MC106</td> <td> 33CK256MC106</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33CK128MC502</td> <td> 33CK256MC502</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33CK128MC503</td> <td> 33CK256MC503</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33CK128MC505</td> <td> 33CK256MC505</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33CK128MC506</td> <td> 33CK256MC506</td></tr>
+</table>
+<p>The following <b>33CK MP </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> <th>512K devices</th> <th>1024K devices</th> 
+</tr> 
+<tr>  <td> 33CK32MP102</td> <td> 33CK64MP102</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP103</td> <td> 33CK64MP103</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP105</td> <td> 33CK64MP105</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP202</td> <td> 33CK64MP202</td> <td> 33CK128MP202</td> <td> 33CK256MP202</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP203</td> <td> 33CK64MP203</td> <td> 33CK128MP203</td> <td> 33CK256MP203</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP205</td> <td> 33CK64MP205</td> <td> 33CK128MP205</td> <td> 33CK256MP205</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP206</td> <td> 33CK64MP206</td> <td> 33CK128MP206</td> <td> 33CK256MP206</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33CK64MP208</td> <td> 33CK128MP208</td> <td> 33CK256MP208</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP305</td> <td> 33CK512MP305</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP306</td> <td> 33CK512MP306</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP308</td> <td> 33CK512MP308</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP405</td> <td> 33CK512MP405</td> <td> 33CK1024MP405</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP406</td> <td> 33CK512MP406</td> <td> 33CK1024MP406</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP408</td> <td> 33CK512MP408</td> <td> 33CK1024MP408</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP410</td> <td> 33CK512MP410</td> <td> 33CK1024MP410</td></tr>
+<tr>  <td> 33CK32MP502</td> <td> 33CK64MP502</td> <td> 33CK128MP502</td> <td> 33CK256MP502</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP503</td> <td> 33CK64MP503</td> <td> 33CK128MP503</td> <td> 33CK256MP503</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP505</td> <td> 33CK64MP505</td> <td> 33CK128MP505</td> <td> 33CK256MP505</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33CK32MP506</td> <td> 33CK64MP506</td> <td> 33CK128MP506</td> <td> 33CK256MP506</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33CK64MP508</td> <td> 33CK128MP508</td> <td> 33CK256MP508</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP605</td> <td> 33CK512MP605</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP606</td> <td> 33CK512MP606</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP608</td> <td> 33CK512MP608</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP705</td> <td> 33CK512MP705</td> <td> 33CK1024MP705</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP706</td> <td> 33CK512MP706</td> <td> 33CK1024MP706</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP708</td> <td> 33CK512MP708</td> <td> 33CK1024MP708</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33CK256MP710</td> <td> 33CK512MP710</td> <td> 33CK1024MP710</td></tr>
+</table>
+<p>The following <b>33CK MPT </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>256K devices</th> <th>512K devices</th> 
+</tr> 
+<tr>  <td> 33CK256MPT608</td> <td> 33CK512MPT608</td></tr>
+</table>
+<p>The following <b>33EDV MC </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 64K devices</th> 
+</tr> 
+<tr>  <td> 33EDV64MC205</td></tr>
+</table>
+<p>The following <b>33EP GM </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>128K devices</th> <th>256K devices</th> <th>512K devices</th> 
+</tr> 
+<tr>  <td> 33EP128GM304</td> <td> 33EP256GM304</td> <td> 33EP512GM304</td></tr>
+<tr>  <td> 33EP128GM306</td> <td> 33EP256GM306</td> <td> 33EP512GM306</td></tr>
+<tr>  <td> 33EP128GM310</td> <td> 33EP256GM310</td> <td> 33EP512GM310</td></tr>
+<tr>  <td> 33EP128GM604</td> <td> 33EP256GM604</td> <td> 33EP512GM604</td></tr>
+<tr>  <td> 33EP128GM706</td> <td> 33EP256GM706</td> <td> 33EP512GM706</td></tr>
+<tr>  <td> 33EP128GM710</td> <td> 33EP256GM710</td> <td> 33EP512GM710</td></tr>
+</table>
+<p>The following <b>33EP GP </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> <th>512K devices</th> 
+</tr> 
+<tr>  <td> 33EP32GP502</td> <td> 33EP64GP502</td> <td> 33EP128GP502</td> <td> 33EP256GP502</td> <td> 33EP512GP502</td></tr>
+<tr>  <td> 33EP32GP503</td> <td> 33EP64GP503</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33EP32GP504</td> <td> 33EP64GP504</td> <td> 33EP128GP504</td> <td> 33EP256GP504</td> <td> 33EP512GP504</td></tr>
+<tr>  <td></td>  <td> 33EP64GP506</td> <td> 33EP128GP506</td> <td> 33EP256GP506</td> <td> 33EP512GP506</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 33EP512GP806</td></tr>
+</table>
+<p>The following <b>33EP GS </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 16K devices</th> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> 
+</tr> 
+<tr>  <td> 33EP16GS202</td> <td> 33EP32GS202</td> <td></td>  <td></td> </tr>
+<tr>  <td> 33EP16GS502</td> <td> 33EP32GS502</td> <td> 33EP64GS502</td> <td></td> </tr>
+<tr>  <td> 33EP16GS504</td> <td> 33EP32GS504</td> <td> 33EP64GS504</td> <td></td> </tr>
+<tr>  <td> 33EP16GS505</td> <td> 33EP32GS505</td> <td> 33EP64GS505</td> <td></td> </tr>
+<tr>  <td> 33EP16GS506</td> <td> 33EP32GS506</td> <td> 33EP64GS506</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33EP128GS702</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33EP128GS704</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33EP128GS705</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33EP128GS706</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33EP64GS708</td> <td> 33EP128GS708</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33EP64GS804</td> <td> 33EP128GS804</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33EP64GS805</td> <td> 33EP128GS805</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33EP64GS806</td> <td> 33EP128GS806</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33EP64GS808</td> <td> 33EP128GS808</td></tr>
+</table>
+<p>The following <b>33EP MC </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> <th>512K devices</th> 
+</tr> 
+<tr>  <td> 33EP32MC202</td> <td> 33EP64MC202</td> <td> 33EP128MC202</td> <td> 33EP256MC202</td> <td> 33EP512MC202</td></tr>
+<tr>  <td> 33EP32MC203</td> <td> 33EP64MC203</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33EP32MC204</td> <td> 33EP64MC204</td> <td> 33EP128MC204</td> <td> 33EP256MC204</td> <td> 33EP512MC204</td></tr>
+<tr>  <td></td>  <td> 33EP64MC206</td> <td> 33EP128MC206</td> <td> 33EP256MC206</td> <td> 33EP512MC206</td></tr>
+<tr>  <td> 33EP32MC502</td> <td> 33EP64MC502</td> <td> 33EP128MC502</td> <td> 33EP256MC502</td> <td> 33EP512MC502</td></tr>
+<tr>  <td> 33EP32MC503</td> <td> 33EP64MC503</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33EP32MC504</td> <td> 33EP64MC504</td> <td> 33EP128MC504</td> <td> 33EP256MC504</td> <td> 33EP512MC504</td></tr>
+<tr>  <td></td>  <td> 33EP64MC506</td> <td> 33EP128MC506</td> <td> 33EP256MC506</td> <td> 33EP512MC506</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 33EP512MC806</td></tr>
+</table>
+<p>The following <b>33EP MU </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>256K devices</th> <th>512K devices</th> 
+</tr> 
+<tr>  <td> 33EP256MU806</td> <td></td> </tr>
+<tr>  <td> 33EP256MU810</td> <td> 33EP512MU810</td></tr>
+<tr>  <td> 33EP256MU814</td> <td> 33EP512MU814</td></tr>
+</table>
+<p>The following <b>33EV GM </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> 
+</tr> 
+<tr>  <td> 33EV32GM002</td> <td> 33EV64GM002</td> <td> 33EV128GM002</td> <td> 33EV256GM002</td></tr>
+<tr>  <td> 33EV32GM003</td> <td> 33EV64GM003</td> <td> 33EV128GM003</td> <td> 33EV256GM003</td></tr>
+<tr>  <td> 33EV32GM004</td> <td> 33EV64GM004</td> <td> 33EV128GM004</td> <td> 33EV256GM004</td></tr>
+<tr>  <td> 33EV32GM006</td> <td> 33EV64GM006</td> <td> 33EV128GM006</td> <td> 33EV256GM006</td></tr>
+<tr>  <td> 33EV32GM102</td> <td> 33EV64GM102</td> <td> 33EV128GM102</td> <td> 33EV256GM102</td></tr>
+<tr>  <td> 33EV32GM103</td> <td> 33EV64GM103</td> <td> 33EV128GM103</td> <td> 33EV256GM103</td></tr>
+<tr>  <td> 33EV32GM104</td> <td> 33EV64GM104</td> <td> 33EV128GM104</td> <td> 33EV256GM104</td></tr>
+<tr>  <td> 33EV32GM106</td> <td> 33EV64GM106</td> <td> 33EV128GM106</td> <td> 33EV256GM106</td></tr>
+</table>
+<p>The following <b>33FJ GP </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 12K devices</th> <th> 16K devices</th> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> 
+</tr> 
+<tr>  <td></td>  <td> 33FJ16GP101</td> <td> 33FJ32GP101</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33FJ16GP102</td> <td> 33FJ32GP102</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ32GP104</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ12GP201</td> <td></td>  <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ12GP202</td> <td></td>  <td> 33FJ32GP202</td> <td> 33FJ64GP202</td> <td> 33FJ128GP202</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ32GP204</td> <td> 33FJ64GP204</td> <td> 33FJ128GP204</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP206[A]</td> <td> 33FJ128GP206[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ32GP302</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33FJ16GP304</td> <td> 33FJ32GP304</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP306[A]</td> <td> 33FJ128GP306[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP310[A]</td> <td> 33FJ128GP310[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 33FJ256GP506[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 33FJ256GP510[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP706[A]</td> <td> 33FJ128GP706[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP708[A]</td> <td> 33FJ128GP708[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP710[A]</td> <td> 33FJ128GP710[A]</td> <td> 33FJ256GP710[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP802</td> <td> 33FJ128GP802</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64GP804</td> <td> 33FJ128GP804</td> <td></td> </tr>
+</table>
+<p>The following <b>33FJ GS </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th>  6K devices</th> <th>  9K devices</th> <th> 16K devices</th> <th> 32K devices</th> <th> 64K devices</th> 
+</tr> 
+<tr>  <td> 33FJ06GS001</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ06GS101[A]</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ06GS102[A]</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ06GS202[A]</td> <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33FJ09GS302</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ16GS402</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ16GS404</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ32GS406</td> <td> 33FJ64GS406</td></tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ16GS502</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ16GS504</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ32GS606</td> <td> 33FJ64GS606</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ32GS608</td> <td> 33FJ64GS608</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ32GS610</td> <td> 33FJ64GS610</td></tr>
+</table>
+<p>The following <b>33FJ MC </b>devices are supported:<p>
+<table frame=box rules=cols cellpadding=3>
+<tr> <th> 12K devices</th> <th> 16K devices</th> <th> 32K devices</th> <th> 64K devices</th> <th>128K devices</th> <th>256K devices</th> 
+</tr> 
+<tr>  <td></td>  <td> 33FJ16MC101</td> <td> 33FJ32MC101</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33FJ16MC102</td> <td> 33FJ32MC102</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ32MC104</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ12MC201</td> <td></td>  <td></td>  <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td> 33FJ12MC202</td> <td></td>  <td> 33FJ32MC202</td> <td> 33FJ64MC202</td> <td> 33FJ128MC202</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ32MC204</td> <td> 33FJ64MC204</td> <td> 33FJ128MC204</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td> 33FJ32MC302</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td> 33FJ16MC304</td> <td> 33FJ32MC304</td> <td></td>  <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC506[A]</td> <td> 33FJ128MC506[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC508[A]</td> <td></td>  <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC510[A]</td> <td> 33FJ128MC510[A]</td> <td> 33FJ256MC510[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC706[A]</td> <td> 33FJ128MC706[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td></td>  <td> 33FJ128MC708[A]</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC710[A]</td> <td> 33FJ128MC710[A]</td> <td> 33FJ256MC710[A]</td></tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC802</td> <td> 33FJ128MC802</td> <td></td> </tr>
+<tr>  <td></td>  <td></td>  <td></td>  <td> 33FJ64MC804</td> <td> 33FJ128MC804</td> <td></td> </tr>
+</table>
+</div>
+<!-- snip -->
+
+<p>The following 'virtual' devices are supported:</p>
+<ul>
+<li>   generic-16bit &nbsp- this device can be used to represent a generic
+                       core device without DSP instructions (no peripherals of 
+                       any kind)</li>
+<li>   generic-16dsp &nbsp- this device can be used to represent a generic
+                       core device with DSP instructions (no peripherals of any
+                       kind)</li>
+<li>   generic-16bit-da &nbsp- this device can be used to represent a generic
+                       "DA" device (no peripherals of any kind)</li>
+<li>   generic-16bit-ep &nbsp- this device can be used to represent a generic
+                       "EP" device without DSP instructions (no peripherals of 
+                        any kind)</li>
+<li>   generic-16dsp-ep &nbsp- this device can be used to represent a generic
+                       "EP" device with DSP instructions (no peripherals of any
+                        kind)</li>
+<li>   generic-16dsp-ch &nbsp- this device can be used to represent a generic
+                       "CH" device (no peripherals of any kind)</li>
+</ul>
+
+<!--  This is now commented out...
+
+     (*) Support files such as header, include and gld files may
+         have PS appended to the device ID. When invoking tools
+         from a command line, do not include PS as part of the CPU identifier.
+-->
+
+</li>
+</span>
+<li class="Heading0"><h1><a name="Install">
+Installation and Upgrades
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<p>Once installed, the build date of this compiler should report itself as:
+   <tt> Nov  1 2023  </tt>.</p>
+
+<p>To determine operating system support for your compiler, see
+   <a href="#OS">System Requirements</a>.</p>
+
+<p>If using MPLAB X IDE, be sure to install
+   MPLAB X IDE v6.15, with the XC-DSC plugin, or later before installing
+   these tools. MPLAB X may not be able to automatically locate the compiler
+   if it is not installed into the default directory.</p>
+
+<p>To install the XC-DSC Language Tools, perform the following steps:</p>
+
+<ol>
+
+  <li> Locate "Installing and Licensing MPLAB XC C Compilers" (DS52059) -
+       also known as the "XCLM User's Guide" - on the Microchip website. </li>
+
+  <li> Follow the instruction in this manual to install your compiler,
+       even if you will be using a Free or Evaluation edition of the compiler.
+  </li>
+
+</ol>
+
+</span>
+<li class="Heading0"><h1><a name="FusaDocument">
+Functional Safety Manual
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+  <p>A Functional Safety Manual for the XC compilers is available in the 
+     documentation package when you purchase a functional safety license.</p>
+</li>
+
+<li class="Heading0"><h1><a name="Document">
+MPLAB XC-DSC Language Tools Documentation
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+  <p>The following documents pertain to the MPLAB XC-DSC C compiler, these may 
+     be installed as part of the full product or downloaded from
+     <a href="https://www.microchip.com/compilers">Microchip's Website</a>:</p>
+
+  <ul>
+  <li><cite>MPLAB XC-DSC Compiler User's Guide (DS50003589A)</cite></li>
+  <li><cite>MPLAB XC-DSC Assembler, Linker and Utilities User's Guide (DS50003590A)
+    </cite></li>
+  <li><cite>MPLAB XC-DSC Libraries Reference Manual (DS50003591A)</cite></li>
+  <li><cite>Microchip Unified Standard Library Reference Guide (DS50003209)</cite></li>
+  </ul>
+
+  <p>We refer to these documents throughout this README in somewhat familiar
+     terms.</p>
+
+  <p>Updates to these manuals, that have not made it into (virtual) print, can
+be found <a href="#DocUpdates">later in this README</a>.</p>
+
+  <p>In addition to these manuals, a set of HTML documentation
+     for peripheral and DSP libraries is also included.
+     </p>
+
+</span>
+<li class="Heading0"><h1><a name="WhatsNew">
+What's New in this Release.
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+  <p>Follows is a summary of new features with each release.  Please be sure
+to check for migration notes or new documentation in the relevant sections of
+this file.</p>
+
+<!--  template, rejig as necessary
+<h2>   vx.yy   </h2>
+-->
+<h2>   v3.00    </h2>
+<p>MPLAB XC-DSC v3.00 is a continuation of MPLAB XC16 with focussed support for
+Microchip Digital Signal Controller devices (DSC).  The name change may be the
+most visible aspect of this update, but there are plenty of changes under the
+hood.</p>
+
+<p>MPLAB XC-DSC v3.00 updates the GCC source base version to GCC v8.3.1. This
+improves our baseline support and provides access to advanced features.</p>
+
+<p>MPLAB XC-DSC v3.00 updates our binary utilities source base to Binutils 
+v2.32.</p>
+
+<p>As bug tracking / feature tracking migrates from an XC16 database to an 
+XC-DSC database, you may see references to both types of issue.   Do not be
+alarmed. :)</p>
+
+</span>
+<li class="Heading0"><h1><a name="Migration">
+Migration Issues
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<h3><u>       Migrating to XC-DSC Version 3.00 </u></h3>
+  <ul>
+  <li><p>The installer default installation directory has been updated to 
+         reflect the product branding change; the new path is 
+         <tt><it>OS-root-path</it>/xc-dsc/<it>version</it></tt>.  
+         The root executable names are prefixed with <tt>xc-dsc</tt>.</p></li>
+  <li><p>Manifest constants defined by the compiler will take on a new form; the former <tt>__XC_</tt> and <tt>__C30_</tt> prefixes of constants still exist in 
+order to maintain code compatibility, however, new macros will take the new 
+prefix <tt>__XC_DSC_</tt> for all new and current constants.  For example:</p>
+     <ul>
+     <li><tt>__XC16_VERSION__</tt> can be referred to by the new name
+         <tt>__XC_DSC_VERSION__</tt>.</li>
+     </ul>
+  <li>
+<p>The assembler macro processor is more restrictive in the syntax that can be used with macro arguments. For example, the definition of a macro called <tt>config</tt> in previous versions of assembler include files included this statement which now results in an error:<p>
+<pre> .pushsection \REG.sec, code </pre>
+<p>An extra string must be added to separate the macro argument <tt>REG</tt> from the following text.  As shown in this example, the "dot" in <tt>.sec</tt> must be separated from the macro name <tt>REG</tt> using the extra string <tt>\()</tt>:</p>
+<pre> .pushsection \REG\().sec, code </pre>
+</li>
+
+ <li><p>Previous version of the assembler would allow .equiv statements to be 
+    modified with a .set or .equ directive.  The current assembler restricts
+    this behaviour in line with the intended purpose of .equiv.  If a symbol
+    may be redefined, use .equ instead of .equiv to define it.</p></li>
+
+
+<li>
+<p>Previous versions of the linker would accept a linker command file (aka, linker script) that was simply included on the command line with other input files. The new linker requires the <tt>-T</tt> option or <tt>--script</tt> option to explicitly specify a linker script. If a linker script is detected without one of those options, the file will be accepted and a warning will be issued.</p>
+</li>
+
+<li>
+<p> Previous versions of the linker would always include symbols defined in a 
+    linker script as global symbols in the linked executable. The new linker 
+    will include such symbols as 'local'.</p>
+</li>
+
+<li><p>The Compiler option -falign-arrays is no longer supported; the compiler 
+       will produce an error message if this is used.</p></li>  
+
+  </ul>
+</span>
+
+<li class="Heading0"><h1>
+<a name="DocUpdates">
+Documentation Updates
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+
+<li class="Heading0"><h1><a name="Fixed">
+Fixed Issues
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<!-- template  cut-n-paste and re-jig
+<h2>   vx.yy  </h2>
+<ul>
+<h3><u>     Assembler </u></h3>
+  <li><p>XC16- &nbsp </p></li>
+  <li> SSR## - short detail
+
+           <p>optional long detail</p>
+           </li>
+<h3><u>     Compiler </u></h3>
+<h3><u>     Linker </u></h3>
+</ul>
+-->
+<h2>   v3.00    </h2>
+<ul>
+  <li>XC16-1588 - Migrate to Binutils 2.32</li>
+  <li>XC16-1641 - Migrate to GCC 8.3.1</li>
+  <li>XC16-1929 - Rebrand XC16 as XC-DSC</li>
+  <li>XC16-2139 - Update Documentation for XC-DSC</li>
+  <li>XC16-2165 - Provide new builtin for BSW (__builtin_bitcopy4)</li>
+  <li>XC16-2295 - Provide universal Mac binaries where possible</li>
+  <li>XC16-2296 - Update XCLM to v3.18</li>
+</ul>
+</span>
+
+<li class="Heading0"><h1><a name="Limitations">
+Limitations
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+   <p>This section describes limitations of the product, and applicable 
+      workarounds when possible. For further assistance, 
+      contact <a href="#Support">Customer Support.</a></p>
+
+   <p>The current limitations are as follows:</p>
+<ul>
+
+<h3><u>   Assembler </u></h3>
+
+<li>  Arguments to the address() section attribute must be even.</li>
+
+<li>  The default section alignment is 2**1. Therefore the minimum
+     section length is 2 bytes in data memory, and 2 PC units
+     (3 bytes) in program memory.</li>
+
+<li>  BIN30-8/21797 - The .align directive changes section alignment regardless
+             of max-skip.
+
+<p>The max-skip parameter does have the desired effect: the location counter is not adjusted, and pad bytes are not inserted. However, the section alignment is changed.</p>
+
+<p>This example will demonstrate:</p>
+
+<pre>
+.data
+.byte 1
+.align 8,0x99,2
+.byte 2
+</pre>
+
+</li>
+
+<h3><u>   Compiler </u></h3>
+
+<li>  XCDSC-4 - Not all GCC options are available for use; please see the
+                current documentation for acceptable.   In particular,
+                the new option -fsanitize=<option> will cause the compiler
+                to ICE.</li>
+<li>  XCDSC-6 - __builin_flim returns incorrect values; use inline assembly
+                or a assembly language function</li>
+<li>  XC16-229 - Variables qualified with the <tt>__pack_upper_byte</tt> keyword
+      are shown at a different address in the watch window of MPLAB IDE
+      and the map file.
+      <p> The debugger is not able to convert the virtual address of these
+          symbols into the real address. For more information, please refere 
+          to section 11.9 PACKING DATA STORED IN FLASH in the compiler manual.</p>
+</li>
+
+<li>  Structures must be less than 4096 words in size. </li>
+
+<li>  Blocks of code (such as a conditional statement or loop) may
+      not exceed 32K program words. </li>
+
+<li>  Procedural Abstraction limitations:
+
+  <p>When the procedural abstraction optimization is enabled (using
+     the -mpa command-line option) inline assembly code must be
+     limited to valid machine instructions.</p>
+
+  <p>Invalid machine instructions, instruction sequences, or assembler
+     directives (sectioning directives, macros, include files, etc.)
+     must not be used. Invalid use will cause procedural abstraction
+     compilation stage to fail, inhibiting the creation of an output file.
+     </p></li>
+
+<li> Data placed in <tt>space(ymemory)</tt> with the section directives or
+     through legacy <tt>section(".ybss")</tt> or <tt>section(".ydata")</tt>
+     attributes may cause a link error.
+
+<li>  C30-11/28301 - No error for unsupported nested functions</li>
+
+<li>  C30-59/26772 - With -g (generate debug info), compiler-generated assembly
+          for noload function switches back to .text before code for
+          function</li>
+
+<li>  C30-68/27206 - DWARF line table is missing entries for two level
+          abstracted code.</li>
+
+<li>  C30-172 - pa tool expects only labels to start at the beginning of a
+        line (column 0)</li>
+
+<li>  C30-398 - 24-bit pointer types are not supported in debug format</li>
+
+<li>  C30-981 - Assignment of literal value to EDS pointer loads incorrect
+                address</li>
+
+
+<h3><u>   Linker </u></h3>
+
+
+<li>  BIN30-178 - Linker does not validate object signatures across
+                  input files.
+
+       <p>The linker will not detect a mis-match of the
+          <tt>-mlarge-arrays</tt> option among input files. As a
+          work-around, place objects into a library before adding
+          them to the project.</p></li>
+
+<li>  BIN30-179 - Linker does not support initialized data sections
+                  larger than 64K. </li>
+
+
+
+</ul>
+
+</span>
+<li class="Heading0"><h1><a name="EnvChanges">
+Environment Variables Modified
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<p>This installation makes no changes to the way environment variables
+have been updated previously.</p>
+
+<p>Modified environment variables are identified as part of the
+installation procedure and are documented in the manuals.</p>
+
+</li>
+</span>
+<li class="Heading0"><h1><a name="Support">
+Customer Support
+</a></h1></li>
+<span style="font-size:10pt;font-weight:normal;">
+
+<br />
+        Microchip provides online support via our home page at:<br />
+        <a href="https://www.microchip.com">https://www.microchip.com</a>
+<br /> <br />
+        Technical support is available through the web site at:<br />
+        <a href="https://www.microchip.com/technical-support">https://www.microchip.com/technical-support</a>
+<br /> <br />
+        A forum for discussion of Microchip products and tools is
+        available at:<br />
+        <a href="https://www.microchip.com/forums">https://www.microchip.com/forums</a>
+<br /> <br />
+
+</span>
+</ol>
+</html>
