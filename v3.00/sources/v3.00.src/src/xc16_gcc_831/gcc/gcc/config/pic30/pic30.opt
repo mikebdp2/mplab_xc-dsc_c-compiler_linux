@@ -1,0 +1,393 @@
+; Options for the PIC30 port of the compiler
+;
+; Copyright (C) 2008,2009 Free Software Foundation, Inc
+;
+; This file is part of GCC.
+;
+; GCC is free software; you can redistribute it and/or modify it under
+; the terms of the GNU General Public License as published by the Free
+; Software Foundation; either version 3, or (at your option) any later
+; version.
+;
+; GCC is distributed in the hope that it will be useful, but WITHOUT
+; ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+; or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+; License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with GCC; see the file COPYING3.  If not see
+; <http://www.gnu.org/licenses/>.
+
+; calum.wilkie@microchip.com
+;
+; The beauty of this file is now options processing is spread among
+; even *MORE* files.  Not all of which are C.  Pure genius.
+;
+
+; define some masks that are set by -mcpu=
+
+Mask(ARCH_PIC24F)
+
+Mask(ARCH_PIC24FK)
+
+Mask(ARCH_PIC24H)
+
+Mask(ARCH_PIC30FXXXX)
+
+Mask(ARCH_PIC30F202X)
+
+Mask(ARCH_PIC33F)
+
+Mask(ARCH_PIC33E)
+
+Mask(ARCH_PIC24E)
+
+Mask(ARCH_PIC33C)
+
+Mask(ARCH_GENERIC)
+
+Mask(ARCH_DA_GENERIC)
+
+Mask(ARCH_EP_GENERIC)
+
+Mask(ARCH_CH_GENERIC)
+
+Mask(ARCH_BB_GENERIC)
+
+Mask(ARCH_AA_GENERIC)
+
+Mask(ARCH_PIC33A)
+
+; define some masks used by other options
+
+Mask(LARGE_CODE)
+
+Mask(CONST_IN_DATA)
+
+Mask(CONST_IN_PSV)
+
+Mask(CONST_IN_AUXCODE)
+
+Mask(AUX_FLASH)
+
+Mask(EDS)
+
+Mask(BIG)
+
+Mask(CCI)
+
+;Mask(PA)
+
+;Mask(NO_ISRW)
+
+;Mask(SKIP_DOT_FILE)
+
+;Mask(ABI_CHECK) 
+
+;Mask(NCHAR)
+
+;Mask(TRACE_ALL_ADDR)
+
+;Mask(LEGACY_LIBC)
+
+;Mask(TARGET_SHORT_DOUBLE)  delete will not used for 8.3.1
+
+;Mask(NO_OVERRIDE_INLINE)
+
+; options
+
+mcci
+Target RejectNegative Mask(CCI) MaskExists
+Use CCI keywords
+
+; ugh have to cheat for these two
+msmall-data
+Target RejectNegative Var(TARGET_SMALL_DATA,1) 
+Use small data model
+
+mlarge-data
+Target RejectNegative Var(TARGET_SMALL_DATA,-1) 
+Use large data model
+
+msmall-scalar
+Target RejectNegative Var(TARGET_SMALL_SCALAR,1) 
+Use small scalar data model
+
+mlarge-scalar
+Target RejectNegative Var(TARGET_SMALL_SCALAR,-1) 
+Use large scalar data model
+
+msmall-aggregate
+Target RejectNegative Var(TARGET_SMALL_AGG,1) 
+Use small aggregate data model
+
+mlarge-aggregate
+Target RejectNegative Var(TARGET_SMALL_AGG,-1) 
+Use large aggregate data model
+
+msmall-code
+Target RejectNegative InverseMask(LARGE_CODE) MaskExists
+Use small code model
+
+mlarge-code
+Target RejectNegative Mask(LARGE_CODE) MaskExists
+Use large code model
+
+mconst-in-data
+Target RejectNegative Mask(CONST_IN_DATA) MaskExists
+Put constants in data space
+
+mconst-in-code
+Target RejectNegative InverseMask(CONST_IN_DATA) MaskExists
+Put constants in code space
+
+mconst-in-auxflash
+Target Mask(CONST_IN_AUXCODE) MaskExists
+When combined with -mconst-in-code, put constants into auxiliarly FLASH
+
+mpa
+Target Var(TARGET_PA) 
+Run (or do not run) procedural abstraction stage
+
+mno-isr-warn
+Target RejectNegative Var(TARGET_NO_ISRW)
+Disable warning for inappropriate use of ISR function names
+
+mno-eds-warn
+Target RejectNegative Var(TARGET_NO_EDS_WARN)
+Disable warning: Taking the address of ... may require an extended pointer for this device
+
+mshort-double
+Target Var(flag_short_double) Init(1)
+Target version of -fshort-double since this flag is not availble to LTO tool
+
+fshort-double
+Target Var(flag_short_double) Init(1)
+Normal version of -fshort-double since this flag is not availble anymore
+
+mno-override-inline
+Target RejectNegative Var(TARGET_NO_OVERRIDE_INLINE)
+Set compiler's override of 'inline' keyword and options for -O1 and -Os; by default the compiler will not inline at these levels
+
+mno-file
+Target RejectNegative Var(TARGET_SKIP_DOT_FILE)
+Disable placing file directive in assembly output
+
+munified
+Target Mask(EDS) MaskExists Undocumented
+Use unified data model
+
+mnear-chars
+Target Var(TARGET_NCHAR)
+Place 'char' variables into near data space, regardless of memory model
+
+menable-large-arrays
+Target Mask(BIG) MaskExists
+Allow arrays larger than 32K
+
+mlarge-arrays
+Target Mask(BIG) MaskExists
+Allow arrays larger than 32K
+
+moptimize-page-setting
+Target Var(TARGET_TRACK_PSVPAG) 
+Attempt to optimize redundant PSVPAG, DSRPAG and DSWPAG changes
+
+mdebug
+Target Var(TRACE_ALL_ADDR) Undocumented
+
+mauxflash
+Target Mask(AUX_FLASH) MaskExists
+Place all code into auxiliary flash
+
+mlegacy-libc
+Target RejectNegative
+use legacy lib/include directory
+
+flegacy-libc
+Target RejectNegative
+use legacy lib/include directory
+
+mno-legacy-libc
+Target RejectNegative
+use legacy lib/include directory
+
+fno-legacy-libc
+Target RejectNegative
+use legacy lib/include directory
+
+mfast-math
+Target RejectNegative
+
+fast-math
+Target RejectNegative
+
+mrelaxed-math
+Target RejectNegative
+
+relaxed-math
+Target RejectNegative
+
+mmusl-libc
+Target RejectNegative Var(pic30_musl_libc)
+Use musl libc
+
+mprint-builtins
+Target RejectNegative Var(TARGET_PRINT_BUILTINS)
+-mprint-builtins        Print a list of enabled builtin functions
+
+mprint-devices
+Target RejectNegtive Var(TARGET_PRINT_DEVICES)
+-mprint-devices         Print a list of devices supported with current support files
+
+mep
+Target Var(TARGET_FORCE_EP) Init(-2) Undocumented
+
+mlnk
+Target RejectNegative Var(pic30_peep_lnk) Undocumented
+
+menable-fixed
+Target RejectNegative JoinedOrMissing Var(pic30_fp_support) 
+Enable fixed point support
+
+menable-integer-mac
+Target RejectNegative Var(pic30_integer_mac_support)
+Enable integer DSP generation (alpha)
+
+fnofallback
+Target RejectNegative Var(pic30_nofallback)
+Do not fall back to free licesnse when license not available
+
+mnew-model
+Target RejectNegative Var(pic30_newmodel) Undocumented
+
+mprint-mchp-search-dirs
+Target RejectNegative Var(pic30_print_mchp_header_path)
+Display compiler and assembler search paths and exit
+
+mafrlcsj
+Target RejectNegative Var(mchp_mafrlcsj) Undocumented
+
+mpreserve-all
+Target Var(TARGET_PRESERVE_ALL)
+Apply __attribute__((preserved)) to all appropriate definitions
+
+mskip-license-check
+Target Var(mchp_skip_license_check) Undocumented
+
+mpsrd-psrd-check
+Target Var(pic30_psrd_psrd_check) Undocumented
+
+fif-conversion-skip
+Target Var(flag_if_conversion_skip) Init(1)
+Allow conversions of if statements to appropriate skip instructions
+
+mexpand-pragma-config
+Target Var(pic30_expand_pragma_config)
+Enable macro expansion in pragma config value
+
+mallow-complex
+Target Var(pic30_allow_complex) Init(0) Undocumented
+
+mdodo
+Target Var(pic30_do_do) Undocumented
+
+mbrief
+Target Var(pic30_brief)
+Reduce the verbosity of the error reporting
+
+;
+; **************************** CAUTION
+; **************************** Ensure that the '=' sign is not followed by
+; **************************** a space or anything
+; **************************** CAUTION
+;
+mcpu=
+Target RejectNegative Joined Var(pic30_target_cpu) 
+Select target CPU
+
+merrata=
+Target RejectNegative Joined Var(pic30_errata) 
+Enable compiler generated work-arounds for specific errata
+
+mno-errata=
+Target RejectNegative Joined Var(pic30_no_errata) 
+Disable compiler generated work-arounds for specific errata
+
+mfill=
+Target Joined Var(TARGET_MEMORY_FILL) Undocumented
+
+mfillupper=
+Target RejectNegative Joined Var(pic30_fillupper) 
+Select global fillupper value for data stored in FLASH
+
+mit=
+Target RejectNegative Joined Var(pic30_it_option) 
+Enable instrumented trace
+
+mpa=
+Target RejectNegative Joined Var(pic30_pa_level) 
+Procedural abstraction nesting limit
+
+mprint-protos=
+Target RejectNegative Joined Var(mchp_builtins_h) Undocumented
+
+mresource=
+Target RejectNegtive Joined Var(pic30_resource_file) 
+Identify compiler resource file
+
+msfr-warn=
+Target RejectNegative Joined Var(pic30_sfr_warning) 
+Enable (default) warnings accessing SFRs on generic devices
+
+msmart-io
+Target RejectNegative JoinedOrMissing Var(pic30_io_size) 
+Set smart IO library call forwarding level
+
+mtext=
+Target RejectNegative Joined Var(pic30_text_scn) 
+Name the text section (default .text)
+
+msmart-io-format=
+Target RejectNegative Joined Var(pic30_io_fmt) 
+Smart IO format string
+
+mext=
+Target Joined Var(mchp_import)
+Enable support for importing external code from another vendor
+
+mpartition=
+Target Joined Var(pic30_partition) Undocumented
+
+mmemorysummary=
+Target Joined Var(pic30_memorysummary) Undocumented
+
+mcvt=
+Target Joined Var(pic30_cvt) Undocumented
+
+mregs=
+Target Joined Var(pic30_registers_available) Undocumented
+
+mreserve=
+Target Joined RejectNegative
+-mreserve=MEM Reserve memory during link phase
+
+mparam-regs=
+Target Joined Var(pic30_param_registers_available) Undocumented
+
+mdfp=
+Target Joined Var(pic30_dfp) 
+Select device data from a Device Family Pack (DFP).
+
+mcodecov=
+Target Joined RejectNegative Var(mchp_codecov) 
+Enable code coverage instrumentation
+
+mlra
+Target Report Var(pic30_lra_flag) Init(0) Save
+Use LRA instead of reload (transitional).
+
+mchp-stack-usage
+Target RejectNegative Var(mchp_stack_usage) Init(0)
+-mchp-stack-usage     Enable Microchip-specific stack usage reporting
+

@@ -1,0 +1,10 @@
+t1.o: in function `__reset':
+(.text+0x0): Link Error: relocation truncated to fit: FILE REG - WORD against `Bmin2'
+(.text+0x2): Link Error: relocation truncated to fit: FILE REG - WORD against `Bmin1'
+(.text+0x4): Link Error: relocation truncated to fit: FILE REG - WORD against `Bmax1'
+(.text+0x6): Link Error: relocation truncated to fit: FILE REG - WORD against `Bmax2'
+t2.o: in function `part2':
+(.text+0x0): Link Error: relocation truncated to fit: FILE REG - WORD against `Amin2'
+(.text+0x2): Link Error: relocation truncated to fit: FILE REG - WORD against `Amin1'
+(.text+0x4): Link Error: relocation truncated to fit: FILE REG - WORD against `Amax1'
+(.text+0x6): Link Error: relocation truncated to fit: FILE REG - WORD against `Amax2'

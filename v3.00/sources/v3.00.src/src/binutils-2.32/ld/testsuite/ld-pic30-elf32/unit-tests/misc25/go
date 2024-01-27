@@ -1,0 +1,96 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+if [ -z "$MDB" ]; then
+    echo "Environmental variable MDB must be set up.";
+    exit 1;
+fi
+
+GCC30="$PIC30_CD/bin/xc16-gcc"
+AS30="$PIC30_CD/bin/xc16-as"
+OPTS="-omf=elf -mcpu=24FJ256DA210 -Tp24FJ256DA210.gld"
+
+#
+# END CONFIGURATION
+#
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+rm -rf t.exe
+$GCC30 -c -mcpu=24FJ256DA210 -o t.exe t1.c -Wl,--heap=32
+
+if [ $vflag = "on" ]; then
+if [ -f "t.exe" ]; then
+  echo "compile was successful..."
+else
+  echo
+  echo "Error: compile did not succeed!"
+  exit
+fi
+fi
+
+rm -rf t2.o
+$AS30 -p24FJ256DA210 t2.s -o t2.o
+
+if [ $vflag = "on" ]; then
+if [ -f "t2.o" ]; then
+  echo "assembly was successful..."
+else
+  echo
+  echo "Error: assembly did not succeed!"
+  exit
+fi
+fi
+
+$GCC30 -mcpu=24FJ256DA210 -T p24FJ256DA210.gld -o t.exe t1.c t2.s -mno-info-linker -Wl,--heap=32
+
+if [ $vflag = "on" ]; then
+if [ -f "t.exe" ]; then
+  echo "link was successful..."
+  echo "executing..."
+  echo
+else
+  echo
+  echo "Error: link did not succeed!"
+  exit
+fi
+fi
+
+rm -rf UartOut.txt sim.out
+$MDB run.cmd > sim.out 2>&1
+cp UartOut.txt test.out
+
+echo
+echo `head -1 info.txt`
+
+if [ $vflag = "on" ]; then
+    diff -b -B test.out expect.out
+else
+    diff -b -B test.out expect.out > /dev/null
+fi
+
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+echo "All Tests Pass"
+echo
+exit 0

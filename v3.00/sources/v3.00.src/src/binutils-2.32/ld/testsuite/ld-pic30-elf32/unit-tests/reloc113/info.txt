@@ -1,0 +1,31 @@
+reloc113: R_PIC30_CALL_ACCESS (all secure slots):
+
+The objective of this test is to verify that
+R_PIC30_CALL_ACCESS relocations can be
+performed on CALL and GOTO instructions
+with all valid secure slots (0..15 or 17..31).
+
+
+How to execute the test:
+
+1. Set the environment variable $PIC30_CD
+    to your xc16 installation directory
+2. Export $PIC30_CD
+3. Execute "go"
+
+To get verbose output:
+
+Execute "go -v"
+
+File Descriptions:
+-----------------
+info.txt - this file
+go - shell script to automate testing
+t1.s, t2.s - source files
+t.lkr - linker script
+test.out - output of the test
+expect.out - correct output
+
+
+6/20/2022 - GSM
+

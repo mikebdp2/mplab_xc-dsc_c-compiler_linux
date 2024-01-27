@@ -1,0 +1,38 @@
+
+t1.o:     file format elf32-pic30
+RELOCATION RECORDS FOR [.text]:
+OFFSET   TYPE              VALUE 
+00000000 .pbyte            b1
+00000000 .pbyte            b2
+00000000 .pbyte            b3
+00000002 .pbyte            b4
+
+
+RELOCATION RECORDS FOR [foo]:
+OFFSET   TYPE              VALUE 
+00000000 .byte             b1
+00000001 .byte             b2
+00000002 .byte             b3
+00000003 .byte             b4
+
+
+RELOCATION RECORDS FOR [dat]:
+OFFSET   TYPE              VALUE 
+00000000 .byte             b1
+00000001 .byte             b2
+00000002 .byte             b3
+00000003 .byte             b4
+
+
+
+t.exe:     file format elf32-pic30
+Contents of section .text:
+ 0110 010203 040000                ......      
+
+t.exe:     file format elf32-pic30
+Contents of section foo:
+ 8100 01020304                             ....            
+
+t.exe:     file format elf32-pic30
+Contents of section dat:
+ 0800 01020304                             ....            

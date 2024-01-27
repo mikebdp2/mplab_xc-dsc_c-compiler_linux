@@ -1,0 +1,18 @@
+t1.o: in function `__reset':
+(.text+0x0): Link Error: Address of 'Bmin2' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+(.text+0x2): Link Error: Address of 'Bmin1' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+(.text+0x4): Link Error: Address of 'Bmax1' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+(.text+0x6): Link Error: Address of 'Bmax2' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+t2.o: in function `part2':
+(.text+0x0): Link Error: Address of 'Amin2' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+(.text+0x2): Link Error: Address of 'Amin1' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+(.text+0x4): Link Error: Address of 'Amax1' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+
+(.text+0x6): Link Error: Address of 'Amax2' is too large. Suggest __eds__ access qualifier (in C) or edspage, edsoffset operators (in assembly)
+

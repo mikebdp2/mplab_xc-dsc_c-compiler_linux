@@ -1,0 +1,133 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+GCC30="$PIC30_CD/bin/xc16-gcc"
+ASM30="$PIC30_CD/bin/xc16-as"
+OBJDUMP="$PIC30_CD/bin/xc16-objdump"
+
+#
+# END CONFIGURATION
+#
+
+# clean up
+rm -f *.o *.exe t1.i t1.s test30.out test33.out
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+if [ $vflag = "on" ]; then
+    echo
+    echo "Compiling for 30F:"
+    echo $err
+fi
+
+$ASM30 -p 30F6014 floatsisf.s -o floatsisf30.o -g
+err1=$?
+$ASM30 -p 30F6014 floatdisf.s -o floatdisf30.o -g
+err2=$?
+if [ $vflag = "on" ]; then
+    echo "$ASM30 -p 30F6014 floatsisf.s -o floatsisf30.o -g"
+    echo $err1
+    echo "$ASM30 -p 30F6014 floatdisf.s -o floatdisf30.o -g"
+    echo $err2
+fi
+
+FILES="t1.c floatsisf30.o floatdisf30.o"
+$GCC30 $FILES -g -save-temps -mcpu=30F6014 -Tp30F6014.gld -o t30.exe
+err=$?
+if [ $vflag = "on" ]; then
+    echo "$GCC30 $FILES -g -save-temps -mcpu=30F6014 -Tp30F6014.gld -o t30.exe"
+    echo $err
+fi
+
+rm -f test.out
+$OBJDUMP --dwarf t30.exe > test30.out
+err=$?
+
+if [ $vflag = "on" ]; then
+    echo "$OBJDUMP --dwarf t30.exe > test30.out"
+    echo $err
+fi
+
+if [ $err -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+#
+# Repeat for 33A
+#
+
+
+if [ $vflag = "on" ]; then
+    echo
+    echo "Compiling for 33A:"
+    echo $err
+fi
+
+$ASM30 -p 33AK128MC106 floatsisf.s -o floatsisf33.o -g
+err1=$?
+$ASM30 -p 33AK128MC106 floatdisf.s -o floatdisf33.o -g
+err2=$?
+if [ $vflag = "on" ]; then
+    echo "$ASM30 -p 33AK128MC106 floatsisf.s -o floatsisf33.o -g"
+    echo $err1
+    echo "$ASM30 -p 33AK128MC106 floatdisf.s -o floatdisf33.o -g"
+    echo $err2
+fi
+
+FILES="t1.c floatsisf33.o floatdisf33.o"
+$GCC30 $FILES -g -save-temps -mcpu=33AK128MC106 -Tp33AK128MC106.gld -o t33.exe
+err=$?
+if [ $vflag = "on" ]; then
+    echo "$GCC30 $FILES -g -save-temps -mcpu=30F6014 -Tp30F6014.gld -o t33.exe"
+    echo $err
+fi
+
+rm -f test.out
+$OBJDUMP --dwarf t33.exe > test33.out
+err=$?
+
+if [ $vflag = "on" ]; then
+    echo "$OBJDUMP --dwarf t33.exe > test33.out"
+    echo $err
+fi
+
+if [ $err -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+
+
+echo
+echo `head -1 info.txt`
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+# clean up again
+rm -f *.o *.exe  t1.i t1.s test30.out test33.out
+
+echo "All Tests Pass"
+echo
+exit 0

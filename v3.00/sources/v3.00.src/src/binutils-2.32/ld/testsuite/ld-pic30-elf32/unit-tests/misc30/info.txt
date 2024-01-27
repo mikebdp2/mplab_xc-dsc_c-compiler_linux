@@ -1,0 +1,32 @@
+misc30: Decoding DWARF records with objdump:
+
+The objective of this test is to verify that
+DWARF debugging records in linked object files
+are correctly decoded (with no errors reported.)
+Both classic dsPIC and 33A formats are tested.
+
+How to execute the test:
+
+1. Set the environment variable $PIC30_CD
+    to your pic30 tools binary directory
+2. Export $PIC30_CD
+3. Execute "go"
+
+To get verbose output:
+
+Execute "go -v"
+
+File Descriptions:
+-----------------
+info.txt - this file
+go - shell script to automate testing
+t1.c - source file
+floatsisf.s - source file (from libm library)
+floatdisf.s - source file (from libm library)
+libm.inc - assembly include file
+test30.out - output of the test
+test33.out - output of the test
+
+
+
+5/11/2023 - GSM

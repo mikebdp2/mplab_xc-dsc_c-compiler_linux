@@ -1,0 +1,86 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+GAS30="$PIC30_CD/bin/xc16-as -p33AK128MC106 -omf=elf -W"
+LIB_DIR="$PIC30_CD/support/dsPIC33A/gld"
+GLD30="$PIC30_CD/bin/xc16-ld -omf=elf -T p33AK128MC106.gld -L $LIB_DIR"
+
+#
+# END CONFIGURATION
+#
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+rm -f t1.o
+$GAS30 -o t1.o t1.s
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GAS30 -o t1.o t1.s"
+    echo $err
+fi
+
+
+rm -f t.exe test.out
+$GLD30 -o t.exe t1.o --report-mem --memorysummary=test.out > temp
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GLD30 -o t.exe t1.o --memorysummary=test.out"
+    echo $err
+fi
+
+# report memory range data, as a debug aid
+grep "\"program\" Memory" temp > range_data
+grep "\"data\" Memory" temp >> range_data
+grep "Dynamic Memory Usage" temp >> range_data
+
+if [ $vflag = "on" ]; then
+    echo
+    echo "Range data from linker script:"
+    echo
+    cat range_data
+    echo
+    echo "Contents of test.out:"
+    echo
+    cat test.out
+    echo
+fi
+
+echo
+echo `head -1 info.txt`
+
+if [ $vflag = "on" ]; then
+    diff -b -B test.out expect.out
+else
+    diff -b -B test.out expect.out > /dev/null
+fi
+
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+# clean up again
+rm -f t1.o t.exe test.out temp range_data
+
+echo "All Tests Pass"
+echo
+exit 0

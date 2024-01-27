@@ -1,0 +1,12 @@
+ELF
+__TARGET_DIVIDE_CYCLES
+__C30ELF
+one
+two
+three
+.symtab
+.strtab
+.shstrtab
+.text
+.data
+.bss

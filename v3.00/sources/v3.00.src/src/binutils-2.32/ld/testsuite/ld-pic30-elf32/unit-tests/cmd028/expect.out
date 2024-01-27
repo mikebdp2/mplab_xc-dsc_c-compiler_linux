@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="t.exe">
+    <memory name="data">
+      <units>bytes</units>
+      <length>16384</length>
+      <used>0</used>
+      <free>16384</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>126976</length>
+      <used>12</used>
+      <free>126964</free>
+    </memory>
+  </executable>
+</project>

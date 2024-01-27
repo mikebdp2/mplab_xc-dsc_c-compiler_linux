@@ -1,0 +1,79 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+if [ -z "$MDB" ]; then
+    echo "Environmental variable MDB must be set up.";
+    exit 1;
+fi
+
+GCC30="$PIC30_CD/bin/xc16-gcc -omf=elf"
+
+#
+# END CONFIGURATION
+#
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+rm -f t1.s
+$GCC30 t1.c -o t.exe -mcpu=30F6014 -isystem $PIC30_CD/include -Wl,--heap=256,--smart-io
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GCC30 t1.c -o t.exe -isystem $PIC30_CD/include -Wl,--heap=256,--smart-io"
+    echo $err
+fi
+
+if [ $err -ne 0 ]; then
+    exit
+fi
+
+rm -f uartout.txt test.out sim.out
+$MDB run.cmd >sim.out 2>&1
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$MDB run.cmd"
+    echo $err
+fi
+cp uartout.txt test.out
+rm -f uartout.txt
+
+if [ $vflag = "on" ]; then
+    echo
+    cat test.out
+fi
+
+echo
+echo `head -1 info.txt`
+
+if [ $vflag = "on" ]; then
+    diff -b -B test.out expect.out
+else
+    diff -b -B test.out expect.out > /dev/null
+fi
+
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+echo "All Tests Pass"
+echo
+exit 0

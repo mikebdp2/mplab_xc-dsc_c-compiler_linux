@@ -1,0 +1,461 @@
+
+Info: Loading file: ./t.lkr
+
+Creating ELF section '.text', initial map = 1
+  sh_flags = 555a254f325f, sh_addr = 6, sh_info = 0
+
+Creating ELF section '.data', initial map = 2
+  sh_flags = 555a254f3269, sh_addr = 3, sh_info = 0
+
+Creating ELF section '.bss', initial map = 4
+  sh_flags = 555a254f326f, sh_addr = 3, sh_info = 0
+
+Creating ELF section '.const', initial map = 0
+  sh_flags = 555a254f3274, sh_addr = 10000002, sh_info = 0
+
+Loading symbols from t1.o
+  (no signature)
+
+Looking for CodeGuard settings in object code:
+
+CodeGuard FLASH Memory:
+  boot    (none)
+  secure  (none)
+  general 0x100 to 0x100fe
+
+CodeGuard RAM Memory:
+  general 0x800 to 0x7ffd
+  secure  (none)
+  boot    (none)
+
+Merging smart-io functions:
+
+Looping through the input bfds:
+  input file t1.o, procID = 30F6014
+
+Found a user-defined startup module
+
+Creating __DefaultInterrupt function
+
+Creating input section ".isr"
+  Adding symbol __DefaultInterrupt
+
+Creating ELF section '.isr', initial map = 1
+  sh_flags = 555a255045fb, sh_addr = 6, sh_info = 0
+
+Loading symbols from default_isr
+  (no signature)
+
+Creating input section ".dinit"
+
+Creating ELF section '.dinit', initial map = 1
+  sh_flags = 555a254f2793, sh_addr = 6, sh_info = 0
+
+Loading symbols from data_init
+  (no signature)
+  .data (data), size = 12 bytes, template += c pwords
+  null terminator, template += 1 pword
+
+Total initialized data (not packed): d pwords
+
+Recording unmapped section: ".isr", attr = 1
+
+Before allocation:
+      section name    flags    VMA    LMA length
+      ------------    -----    ---    --- ------
+             .text      223      0      0      0 
+              .bss        1      0      0      0 
+             .data      241      0      0      0 
+            .const      213      0      0      0 
+            .dinit  1020223      0      0      0 
+
+Pre-calculating output sections
+
+Before sequential allocation:
+      section name    flags    VMA    LMA length
+      ------------    -----    ---    --- ------
+             .text      223      0      0      0 
+              .bss        1      0      0      0 
+             .data      241      0      0      0 
+            .const      213      0      0      0 
+            .dinit  1020223      0      0      0 
+
+Memory Regions:
+     program: addr =   100, len = 10000, current =   100
+        data: addr =   800, len =  77fe, current =   800
+
+Sequential section .text in region 'program'
+    [origin = 100, dot = 100, length = 10100]
+
+Sequential section .bss in region 'data'
+    [origin = 800, dot = 800, length = 7ffe]
+
+Sequential section .data in region 'data'
+    [origin = 800, dot = 800, length = 7ffe]
+
+Sequential section .const in region 'program'
+    [origin = 100, dot = 200, length = 10100]
+
+Sequential section .dinit in region 'program'
+    [origin = 100, dot = 4400, length = 10100]
+
+Checking section flags:
+
+After sequential allocation:
+      section name    flags    VMA    LMA length
+      ------------    -----    ---    --- ------
+             .text      223    100    100    100 
+              .bss        1    800    800      0 
+             .data      241    800    800     12 
+            .const      213    200    200   4200 
+            .dinit  1020223   4400   4400     1a 
+
+Memory Regions:
+     program: addr =   100, len = 10000, current =  441a
+        data: addr =   800, len =  77fe, current =   812
+
+Contents of unassigned section list at 555a25504650:
+  name = (none), addr = 0, len = 0, attr = 0
+  name = .isr, addr = 0, len = 4, attr = 1
+
+
+Contents of memory region section list at 0:
+
+
+Building allocation list for data type regions
+  attribute has_mask = 0x18000e  hasnot_mask = 0x800021
+
+Using 'data' as data region
+
+Building free block list for region "data"
+  origin = 800, length = 77fe, current = 812
+    (section ".data", addr = 800, len = 12, attr = 2)
+  block 1, addr = 812, len = 77ec
+
+Contents of allocation section list at 555a25504c40:
+  name = (none), addr = 0, len = 0, attr = 0
+
+
+Allocating in region 'data'
+
+Locating sections with mask ffffffff, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask 80, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask 10000, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask 100, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask 200, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask 400, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask ffffffff, but not 380000
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'data'
+
+Locating sections with mask 80000, but not 0
+  locate_options = 4, exclude_addr = 8000
+
+Allocating in region 'data'
+
+Locating sections with mask 100000, but not 0
+  locate_options = 4, exclude_addr = 8000
+
+Allocating in region 'data'
+
+Locating sections with mask ffffffff, but not 180000
+  locate_options = 3, exclude_addr = 8000
+
+Allocating in region 'data'
+
+Locating sections with mask ffffffff, but not 180000
+  locate_options = 2, exclude_addr = 0
+
+Creating unified free block list for 'data' type memory...
+
+Allocating in region 'data'
+  attaching 812 (77ec bytes) from region 'data'
+
+Building allocation list for region "program"
+  attribute has_mask = 0x1000011  hasnot_mask = 0x800000
+  input section ".isr", len = 4, flags = 800223, attr = 1
+
+Using 'program' as program region
+
+Building free block list for region "program"
+  origin = 100, length = 10000, current = 441a
+    (section ".text", addr = 100, len = 100, attr = 1)
+    (section ".const", addr = 200, len = 4200, attr = 10)
+    (section ".dinit", addr = 4400, len = 1a, attr = 2000001)
+  block 1, addr = 441a, len = bce6
+
+Contents of allocation section list at 555a25504c40:
+  name = (none), addr = 0, len = 0, attr = 0
+  name = .isr, addr = 0, len = 4, attr = 1
+
+
+Allocating in region 'program'
+
+Locating sections with mask 80, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'program'
+
+Locating sections with mask 10, but not 0
+  locate_options = 0, exclude_addr = 0
+
+Allocating in region 'program'
+
+Locating sections with mask ffffffff, but not 0
+  locate_options = 0, exclude_addr = 0
+  input section ".isr", len = 4, attributes = code 
+    consider block at 441a, len = bce6
+    option1 [advancing from 441a]
+    option1 aligned at 441a
+    option2 [descending from 100fc]
+    option2 aligned at 100fc
+    option1 = 441a, option2 = 100fc
+    updating section info:  vma = 441a, lma = 441a
+    creating output section statement ".isr%1"
+    creating remainder blocks: 0, bce2
+    removing from allocation list
+
+Creating unified free block list for 'program' type memory...
+
+Allocating in region 'program'
+  attaching 441e (bce2 bytes) from region 'program'
+
+Building allocation list for region "eedata"
+  attribute has_mask = 0x20  hasnot_mask = 0x0
+
+Building allocation list for region "auxflash"
+  attribute has_mask = 0x10800000   hasnot_mask = 0x0
+
+Scanning the output statements
+
+After best-fit allocation:
+      section name    flags    VMA    LMA length
+      ------------    -----    ---    --- ------
+             .text      223    100    100    100 
+              .bss        1    800    800      0 
+             .data      241    800    800     12 
+            .const      213    200    200   4200 
+            .dinit  1020223   4400   4400     1a 
+            .isr%1   800223   441a   441a      0 
+
+Memory Regions:
+     program: addr =   100, len = 10000, current =  441a
+        data: addr =   800, len =  77fe, current =   812
+
+Before finish:
+      section name    flags    VMA    LMA length
+      ------------    -----    ---    --- ------
+             .text      223    100    100    100 
+              .bss        1    800    800      0 
+             .data      241    800    800     12 
+            .const      213    200    200   4200 
+            .dinit  1020223   4400   4400     1a 
+            .isr%1   800223   441a   441a      4 (fixed)
+
+Looking for zero-length sections:
+  Stripping section .bss
+
+Checking PSV sections:
+  section .const vma = 8200, lma = 200 
+
+Looking for alignment gaps:
+
+Creating stack from remaining data memory...
+  selecting block at 812
+  stack base = 812, stack limit = 7fee
+Creating __heap = 0
+Creating __eheap = 0
+Creating __SP_init = 812
+Creating __SPLIM_init = 7fee
+Creating __MIN_STACK_SIZE = 10
+Creating __STACKGUARD_SIZE = 10
+Creating __dinit_tblpage = 0
+Creating __dinit_tbloffset = 4400
+Creating __const_psvpage = 0
+Creating __const_length = 4200
+Creating __enable_fixed = 0
+Creating __bootconst_psvpage = 0
+Creating __secureconst_psvpage = 0
+
+Cleaning section names:
+  .isr%1 --> .isr
+
+After finish:
+      section name    flags    VMA    LMA length
+      ------------    -----    ---    --- ------
+             .text      223    100    100    100 
+             .data      241    800    800     12 
+            .const      213   8200    200   4200 
+            .dinit  1020223   4400   4400     1a 
+              .isr   800223   441a   441a      4 (fixed)
+
+Memory Regions:
+     program: addr =   100, len = 10000, current =  441a
+        data: addr =   800, len =  77fe, current =   812
+
+Dynamic Memory
+  heap:  2 bytes, 0 to 0
+  stack: 77de bytes, 812 to 7fee
+
+Before generic final link:
+   section flags    VMA    LMA length
+   ------- ----- ------ ------ ------
+     .text   223    100    100    100
+     .data   241    800    800     12
+    .const   213   8200    200   4200
+    .dinit 1020223   4400   4400     1a
+      .isr 800223   441a   441a      4
+--> pic30_elf32_bfd_get_section_contents '.text'
+
+symbol->name = _bop
+symbol->value = 200
+output_base = 8200
+symbol->section->output_offset = 0
+reloc_entry->address = 14
+reloc_entry->addend = 0
+relocation = 8400
+Final relocation = 4200 at 14
+
+symbol->name = _bop
+symbol->value = 200
+output_base = 8200
+symbol->section->output_offset = 0
+reloc_entry->address = 18
+reloc_entry->addend = 0
+relocation = 8400
+Final relocation = 8400 at 18
+symbol->name = _bop
+symbol->value = 0x200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x2550e520
+octets = 0x1c
+4171 relocation = 0x8400
+symbol->name = _bop
+symbol->value = 0x200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x2550e520
+octets = 0x20
+4171 relocation = 0x8400
+
+symbol->name = _beep
+symbol->value = 4200
+output_base = 8200
+symbol->section->output_offset = 0
+reloc_entry->address = 30
+reloc_entry->addend = 0
+relocation = c400
+Final relocation = 6200 at 30
+
+symbol->name = _beep
+symbol->value = 4200
+output_base = 8200
+symbol->section->output_offset = 0
+reloc_entry->address = 34
+reloc_entry->addend = 0
+relocation = c400
+Final relocation = c400 at 34
+symbol->name = _beep
+symbol->value = 0x4200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x2550e520
+octets = 0x38
+4171 relocation = 0xc400
+symbol->name = _beep
+symbol->value = 0x4200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x2550e520
+octets = 0x3c
+4171 relocation = 0xc400
+--> pic30_elf32_bfd_get_section_contents '.data'
+symbol->name = _bop
+symbol->value = 0x200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x25504d00
+octets = 0xc
+4171 relocation = 0x8400
+symbol->name = _bop
+symbol->value = 0x200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x25504d00
+octets = 0x10
+4171 relocation = 0x8400
+symbol->name = _beep
+symbol->value = 0x4200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x25504d00
+octets = 0x18
+4171 relocation = 0xc400
+symbol->name = _beep
+symbol->value = 0x4200
+output_base = 0x8200
+reloc_target_output_section->lma = 0x200
+symbol->section->output_offset = 0x0
+data = 0x25504d00
+octets = 0x1c
+4171 relocation = 0xc400
+--> pic30_elf32_bfd_get_section_contents '.const'
+expanding 0x8400 bytes into .const at 0
+--> pic30_elf32_bfd_get_section_contents '.isr'
+
+After generic final link:
+   section flags    VMA    LMA length
+   ------- ----- ------ ------ ------
+     .text   223    100    100    100
+     .data   241    800    800     12
+    .const   213   8200    200   4200
+    .dinit 1020223   4400   4400     1a
+      .isr 800223   441a   441a      4
+--> pic30_elf32_bfd_get_section_contents '.dinit'
+
+Processing data sections:
+  .data (data), size = 12 bytes, template addr = 555a254e6bf0, priority = 0
+--> pic30_elf32_bfd_get_section_contents '.data'
+  last template addr written = 555a254e6c23
+
+After pic30 final link:
+   section flags    VMA    LMA length
+   ------- ----- ------ ------ ------
+     .text   223    100    100    100
+     .data   641    800    800     12
+    .const   213   8200    200   4200
+    .dinit 1000223   4400   4400     1a
+      .isr 800223   441a   441a      4

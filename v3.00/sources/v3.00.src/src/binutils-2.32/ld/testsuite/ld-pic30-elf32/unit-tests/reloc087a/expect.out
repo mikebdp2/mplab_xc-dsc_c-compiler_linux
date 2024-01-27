@@ -1,0 +1,46 @@
+
+t.exe:     file format elf32-pic30
+
+Disassembly of section .text:
+
+00000100 <__reset>:
+ 100:	80 00 20    	mov.w     #0x8, w0
+ 102:	80 ff 2f    	mov.w     #0xfff8, w0
+ 104:	80 30 20    	mov.w     #0x308, w0
+ 106:	80 2f 20    	mov.w     #0x2f8, w0
+ 108:	70 00 28    	mov.w     #0x8007, w0
+ 10a:	70 ff 27    	mov.w     #0x7ff7, w0
+ 10c:	80 00 28    	mov.w     #0x8008, w0
+ 10e:	80 ff 27    	mov.w     #0x7ff8, w0
+ 110:	f0 ff 2f    	mov.w     #0xffff, w0
+ 112:	00 00 00    	nop       
+ 114:	80 00 20    	mov.w     #0x8, w0
+ 116:	80 ff 2f    	mov.w     #0xfff8, w0
+ 118:	80 30 20    	mov.w     #0x308, w0
+ 11a:	80 2f 20    	mov.w     #0x2f8, w0
+ 11c:	70 00 28    	mov.w     #0x8007, w0
+ 11e:	70 ff 27    	mov.w     #0x7ff7, w0
+ 120:	80 00 28    	mov.w     #0x8008, w0
+ 122:	80 ff 27    	mov.w     #0x7ff8, w0
+ 124:	f0 ff 2f    	mov.w     #0xffff, w0
+
+00000126 <__t2>:
+ 126:	80 00 20    	mov.w     #0x8, w0
+ 128:	80 ff 2f    	mov.w     #0xfff8, w0
+ 12a:	80 30 20    	mov.w     #0x308, w0
+ 12c:	80 2f 20    	mov.w     #0x2f8, w0
+ 12e:	70 00 28    	mov.w     #0x8007, w0
+ 130:	70 ff 27    	mov.w     #0x7ff7, w0
+ 132:	80 00 28    	mov.w     #0x8008, w0
+ 134:	80 ff 27    	mov.w     #0x7ff8, w0
+ 136:	f0 ff 2f    	mov.w     #0xffff, w0
+ 138:	00 00 00    	nop       
+ 13a:	80 00 20    	mov.w     #0x8, w0
+ 13c:	80 ff 2f    	mov.w     #0xfff8, w0
+ 13e:	80 30 20    	mov.w     #0x308, w0
+ 140:	80 2f 20    	mov.w     #0x2f8, w0
+ 142:	70 00 28    	mov.w     #0x8007, w0
+ 144:	70 ff 27    	mov.w     #0x7ff7, w0
+ 146:	80 00 28    	mov.w     #0x8008, w0
+ 148:	80 ff 27    	mov.w     #0x7ff8, w0
+ 14a:	f0 ff 2f    	mov.w     #0xffff, w0

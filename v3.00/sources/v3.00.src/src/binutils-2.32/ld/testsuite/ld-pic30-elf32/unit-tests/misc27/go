@@ -1,0 +1,91 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+if [ -z "$MDB" ]; then
+    echo "Environmental variable MDB must be set up.";
+    exit 1;
+fi
+
+GCC30=$PIC30_CD/bin/xc16-gcc
+PROC="GENERIC-16DSP-CH"
+
+#
+# END CONFIGURATION
+#
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+rm -f t.exe
+OPTS="-mcpu=$PROC -o t.exe t1.c t2.s -Tt.gld"
+$GCC30 $OPTS || exit 99
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GCC30 $OPTS"
+    echo $err
+fi
+
+rm -rf UartOut.txt sim.out
+$MDB run.cmd > sim.out 2>&1
+
+rm -f test.out
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$MDB run.cmd"
+    echo $err
+fi
+
+{
+echo
+echo  "Simulator Output (dsPIC33CK256MP508):"
+echo
+} > test.out
+cat UartOut.txt >> test.out
+#rm -f UartOut.txt
+
+echo
+echo `head -1 info.txt`
+
+if [ $vflag = "on" ]; then
+    echo
+    cat test.out
+fi
+
+if [ $vflag = "on" ]; then
+    diff -b -B test.out expect.out
+else
+    diff -b -B test.out expect.out > /dev/null
+fi
+
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+# Clean up
+rm -f sim.out
+rm -f UartOut.txt
+rm -f t.exe
+rm -f test.out
+
+echo "All Tests Pass"
+echo
+exit 0

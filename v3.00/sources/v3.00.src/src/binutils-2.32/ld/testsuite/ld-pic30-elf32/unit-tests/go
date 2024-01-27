@@ -1,0 +1,135 @@
+#!/usr/bin/perl
+#
+# go
+#
+# - execute all unit tests
+#    and clean up after
+#
+
+# load some modules we need
+use Cwd;
+use File::Spec::Functions;
+
+my $num_tests = 0;
+my $num_pass = 0;
+my $num_fail = 0;
+my @fail_list;
+
+if (@ARGV) {
+    # read test directory from the command line
+    $home = $ARGV[0];
+}
+else {
+    # get the current working directory
+    $home = getcwd();
+}
+
+if (defined $ENV{'I'}) {
+  $ENV{'PIC30_CD'}="$ENV{'I'}/..";
+}
+elsif (!defined $ENV{PIC30_CD}) {
+  print "You must define \$I or \$PIC30_CD\n";
+  exit;
+}
+
+if (defined $ENV{'MDB_PATH'}) {
+  $ENV{'MDB'}="$ENV{'MDB_PATH'}";
+}
+elsif (!defined $ENV{'MDB'}) {
+  print "You must define \$MDB_PATH or \$MDB\n";
+  exit;
+}
+
+print "\n-----------------\n";
+print "Linker Unit Tests\n";
+print "-----------------\n";
+print "\nTest Directory = $home\n";
+print "PIC30_CD = $ENV{PIC30_CD}\n";
+print "MDB = $ENV{MDB}\n";
+
+$date = `date`;
+print "\nTest Run on: $date\n";
+
+# a hash of directories to skip always
+my %skip = (
+	#operators => 1,
+);
+
+# skip more if we're testing an xc-dsc compiler
+chdir "$ENV{PIC30_CD}/bin";
+if ( -e 'xc-dsc-gcc' ) {
+  print "XC-DSC compiler detected\n\n";
+  my @omit_tests = (
+    'cmd002c',
+    'cmd021',
+    'cmd024',
+    'cmd028',
+    'lkr065',
+    'lkr066',
+    'lkr067',
+    'misc25',
+    'misc29',
+    'misc30',
+    'reloc118',
+    );
+  foreach $t (@omit_tests)
+    { $skip{$t} = 1; }
+}
+
+my $num_skip = keys %skip;
+
+# open the test directory
+#  and get a list of nested directories
+chdir $home;
+opendir(DOT, '.');
+@dirlist = grep { -d and $_ ne '.' and $_ ne '..' } readdir DOT;
+@dirlist = sort @dirlist;
+
+# for each nested directory
+foreach $d (@dirlist) {
+    chomp $d;
+    next if $skip{$d}; # avoid skip list
+
+    chdir catfile($home,$d); # cd to an absolute path
+
+    next if (! -e 'go'); # avoid directories without 'go' scripts
+
+    print "testing $d...\n";
+    $result = `sh go`; # execute the test
+    $num_tests++;
+    if ($result =~ /Pass/)
+         { $num_pass++; }
+    else
+         { $num_fail++; push @fail_list, $d }
+    print $result;
+
+    #@files = <*>;
+    #print " @files\n"; # list the directory before cleaning
+
+    unlink 'a.out', 'test.out', 'UartOut.txt'; # clean up
+    unlink <*.stackdump>, <*.hex>, <*.lst>, <*.map>, <*~>, <*.exe>, <*.o>;
+    unlink <temp*>, <*.a>, <*.dump>, <sim.out>, <*.new>, <*.old>;
+
+    #@files = <*>;
+    #print " @files\n"; # list the directory after cleaning
+}
+
+closedir DOT;
+
+# print summary
+print "------------------------\n";
+print "Linker Unit Test Summary\n";
+print "------------------------\n\n";
+print "PIC30_CD = $ENV{PIC30_CD}\n";
+print "MDB = $ENV{MDB}\n\n";
+print "$num_tests Total tests in $home\n";
+print "$num_pass Tests PASS\n";
+print "$num_fail Tests FAIL\n";
+print "$num_skip Tests SKIPPED\n\n";
+
+if ($num_fail) {
+    print "Failed Tests: @fail_list\n\n";
+}
+
+exit;
+

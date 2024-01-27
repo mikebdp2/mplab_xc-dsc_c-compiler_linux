@@ -1,0 +1,30 @@
+
+t.exe:     file format elf32-pic30
+
+Disassembly of section .text:
+
+00801000 <__DefaultInterrupt>:
+  801000:	00 00 02 f2 	break     
+  801004:	03 00 00 fe 	nopr      
+
+00801008 <__crt_start_mode>:
+  801008:	02 00 00 cc 	retlw.w   #0x0, w0
+Disassembly of section .text:
+
+0080100c <__reset>:
+  80100c:	03 00 01 80 	mov.sl    #0x4000, w0
+  801010:	23 00 01 80 	mov.sl    #0x4008, w0
+  801014:	e3 ff 00 80 	mov.sl    #0x3ff8, w0
+  801018:	01 00 04 80 	mov.l     #0x4000, w0
+  80101c:	05 00 00 80 
+  801020:	81 00 04 80 	mov.l     #0x4008, w0
+  801024:	05 00 00 80 
+  801028:	81 ff 03 80 	mov.l     #0x3ff8, w0
+  80102c:	05 00 00 80 
+  801030:	03 00 01 80 	mov.sl    #0x4000, w0
+  801034:	03 00 01 80 	mov.sl    #0x4000, w0
+  801038:	23 00 01 80 	mov.sl    #0x4008, w0
+  80103c:	23 00 01 80 	mov.sl    #0x4008, w0
+  801040:	e3 ff 00 80 	mov.sl    #0x3ff8, w0
+  801044:	e3 ff 00 80 	mov.sl    #0x3ff8, w0
+  801048:	0a fe ff ae 	bra       0x80100c <__reset>

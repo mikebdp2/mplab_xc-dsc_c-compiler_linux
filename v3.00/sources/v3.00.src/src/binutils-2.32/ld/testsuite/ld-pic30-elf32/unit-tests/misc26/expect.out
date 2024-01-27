@@ -1,0 +1,14 @@
+
+Simulator Output (dsPIC33CK256MP508):
+
+Testing BFINS instruction:
+
+000F = 000f
+00F0 = 00f0
+0F00 = 0f00
+F000 = f000
+
+Testing BFEXT instruction:
+
+abcd = abcd
+

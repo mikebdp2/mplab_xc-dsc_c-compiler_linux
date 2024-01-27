@@ -1,0 +1,31 @@
+reloc118: R_PIC30_WORD24_16, R_PIC30_WORD32 (general+offset):
+
+The objective of this test is to verify that
+R_PIC30_WORD24_16 and R_PIC30_WORD32 relocations
+work properly with positive and negative offsets.
+
+Note: These relocation types are used only on
+ 33A and later devices.
+
+How to execute the test:
+
+1. Set the environment variable $PIC30_CD
+    to your pic30 tools binary directory
+2. Export $PIC30_CD
+3. Execute "go"
+
+To get verbose output:
+
+Execute "go -v"
+
+File Descriptions:
+-----------------
+info.txt - this file
+go - shell script to automate testing
+t1.s - source file
+test.out - output of the test
+expect.out - correct output
+
+
+
+3/28/2023 - GSM

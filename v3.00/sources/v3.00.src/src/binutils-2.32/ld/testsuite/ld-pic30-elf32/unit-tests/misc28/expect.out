@@ -1,0 +1,27 @@
+
+t1.o:     file format elf32-pic30
+
+Disassembly of section .text:
+
+00000000 <here-0x4>:
+   0:	21 02       	mov.w     w1, w2
+	...
+
+00000004 <here>:
+   4:	40 00 32 e0 	add.w     w1, w2, w3
+   8:	21 02       	mov.w     w1, w2
+   a:	00 00       	neop      
+   c:	40 00 32 e0 	add.w     w1, w2, w3
+  10:	40 00 32 e0 	add.w     w1, w2, w3
+  14:	11 22       	lsr.l     w1, #0x1, w1
+	...
+
+00000018 <there>:
+  18:	11 22       	lsr.l     w1, #0x1, w1
+  1a:	33 44       	btg.b     w3, #0x3
+  1c:	11 22       	lsr.l     w1, #0x1, w1
+  1e:	00 00       	neop      
+  20:	11 22       	lsr.l     w1, #0x1, w1
+  22:	33 44       	btg.b     w3, #0x3
+  24:	00 00       	neop      
+	...

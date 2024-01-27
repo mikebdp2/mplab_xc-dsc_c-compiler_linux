@@ -1,0 +1,5 @@
+t1.o: in function `__reset':
+(.text+0x0): Link Error: relocation truncated to fit: FRAME SIZE against `frameMIN2'
+(.text+0x2): Link Error: relocation truncated to fit: FRAME SIZE against `frameMIN1'
+(.text+0x4): Link Error: relocation truncated to fit: FRAME SIZE against `frameMAX1'
+(.text+0x6): Link Error: relocation truncated to fit: FRAME SIZE against `frameMAX2'

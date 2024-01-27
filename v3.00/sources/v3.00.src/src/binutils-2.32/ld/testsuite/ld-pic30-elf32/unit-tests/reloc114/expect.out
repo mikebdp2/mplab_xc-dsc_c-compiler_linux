@@ -1,0 +1,70 @@
+
+t.exe:     file format elf32-pic30
+
+Disassembly of section .text:
+
+00000100 <__reset>:
+ 100:	00 00 20    	mov.w     #0x0, w0
+ 102:	80 00 20    	mov.w     #0x8, w0
+ 104:	80 ff 2f    	mov.w     #0xfff8, w0
+ 106:	00 30 20    	mov.w     #0x300, w0
+ 108:	80 30 20    	mov.w     #0x308, w0
+ 10a:	80 2f 20    	mov.w     #0x2f8, w0
+ 10c:	f0 ff 27    	mov.w     #0x7fff, w0
+ 10e:	70 00 28    	mov.w     #0x8007, w0
+ 110:	70 ff 27    	mov.w     #0x7ff7, w0
+ 112:	00 00 28    	mov.w     #0x8000, w0
+ 114:	80 00 28    	mov.w     #0x8008, w0
+ 116:	80 ff 27    	mov.w     #0x7ff8, w0
+ 118:	f0 ff 2f    	mov.w     #0xffff, w0
+ 11a:	70 00 20    	mov.w     #0x7, w0
+ 11c:	70 ff 2f    	mov.w     #0xfff7, w0
+ 11e:	00 00 00    	nop       
+ 120:	00 00 20    	mov.w     #0x0, w0
+ 122:	80 00 20    	mov.w     #0x8, w0
+ 124:	80 ff 2f    	mov.w     #0xfff8, w0
+ 126:	00 30 20    	mov.w     #0x300, w0
+ 128:	80 30 20    	mov.w     #0x308, w0
+ 12a:	80 2f 20    	mov.w     #0x2f8, w0
+ 12c:	f0 ff 27    	mov.w     #0x7fff, w0
+ 12e:	70 00 28    	mov.w     #0x8007, w0
+ 130:	70 ff 27    	mov.w     #0x7ff7, w0
+ 132:	00 00 28    	mov.w     #0x8000, w0
+ 134:	80 00 28    	mov.w     #0x8008, w0
+ 136:	80 ff 27    	mov.w     #0x7ff8, w0
+ 138:	f0 ff 2f    	mov.w     #0xffff, w0
+ 13a:	70 00 20    	mov.w     #0x7, w0
+ 13c:	70 ff 2f    	mov.w     #0xfff7, w0
+
+0000013e <__t2>:
+ 13e:	00 00 20    	mov.w     #0x0, w0
+ 140:	80 00 20    	mov.w     #0x8, w0
+ 142:	80 ff 2f    	mov.w     #0xfff8, w0
+ 144:	00 30 20    	mov.w     #0x300, w0
+ 146:	80 30 20    	mov.w     #0x308, w0
+ 148:	80 2f 20    	mov.w     #0x2f8, w0
+ 14a:	f0 ff 27    	mov.w     #0x7fff, w0
+ 14c:	70 00 28    	mov.w     #0x8007, w0
+ 14e:	70 ff 27    	mov.w     #0x7ff7, w0
+ 150:	00 00 28    	mov.w     #0x8000, w0
+ 152:	80 00 28    	mov.w     #0x8008, w0
+ 154:	80 ff 27    	mov.w     #0x7ff8, w0
+ 156:	f0 ff 2f    	mov.w     #0xffff, w0
+ 158:	70 00 20    	mov.w     #0x7, w0
+ 15a:	70 ff 2f    	mov.w     #0xfff7, w0
+ 15c:	00 00 00    	nop       
+ 15e:	00 00 20    	mov.w     #0x0, w0
+ 160:	80 00 20    	mov.w     #0x8, w0
+ 162:	80 ff 2f    	mov.w     #0xfff8, w0
+ 164:	00 30 20    	mov.w     #0x300, w0
+ 166:	80 30 20    	mov.w     #0x308, w0
+ 168:	80 2f 20    	mov.w     #0x2f8, w0
+ 16a:	f0 ff 27    	mov.w     #0x7fff, w0
+ 16c:	70 00 28    	mov.w     #0x8007, w0
+ 16e:	70 ff 27    	mov.w     #0x7ff7, w0
+ 170:	00 00 28    	mov.w     #0x8000, w0
+ 172:	80 00 28    	mov.w     #0x8008, w0
+ 174:	80 ff 27    	mov.w     #0x7ff8, w0
+ 176:	f0 ff 2f    	mov.w     #0xffff, w0
+ 178:	70 00 20    	mov.w     #0x7, w0
+ 17a:	70 ff 2f    	mov.w     #0xfff7, w0

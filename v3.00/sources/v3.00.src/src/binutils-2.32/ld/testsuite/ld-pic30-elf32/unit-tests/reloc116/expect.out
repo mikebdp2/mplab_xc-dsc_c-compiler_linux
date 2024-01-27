@@ -1,0 +1,68 @@
+
+t.exe:     file format elf32-pic30
+
+Disassembly of section .text:
+
+00000100 <__reset>:
+ 100:	00 00 00    	nop       
+ 102:	08 00 00    	nop       
+ 104:	f8 ff 00    	nop       
+ 106:	00 03 00    	nop       
+ 108:	08 03 00    	nop       
+ 10a:	f8 02 00    	nop       
+ 10c:	ff 7f 00    	nop       
+ 10e:	07 80 00    	nop       
+ 110:	f7 7f 00    	nop       
+ 112:	00 80 00    	nop       
+ 114:	08 80 00    	nop       
+ 116:	f8 7f 00    	nop       
+ 118:	ff ff 00    	nop       
+ 11a:	07 00 00    	nop       
+ 11c:	f7 ff 00    	nop       
+	...
+ 122:	08 00 00    	nop       
+ 124:	f8 ff 00    	nop       
+ 126:	00 03 00    	nop       
+ 128:	08 03 00    	nop       
+ 12a:	f8 02 00    	nop       
+ 12c:	ff 7f 00    	nop       
+ 12e:	07 80 00    	nop       
+ 130:	f7 7f 00    	nop       
+ 132:	00 80 00    	nop       
+ 134:	08 80 00    	nop       
+ 136:	f8 7f 00    	nop       
+ 138:	ff ff 00    	nop       
+ 13a:	07 00 00    	nop       
+ 13c:	f7 ff 00    	nop       
+
+0000013e <__t2>:
+ 13e:	00 00 00    	nop       
+ 140:	08 00 00    	nop       
+ 142:	f8 ff 00    	nop       
+ 144:	00 03 00    	nop       
+ 146:	08 03 00    	nop       
+ 148:	f8 02 00    	nop       
+ 14a:	ff 7f 00    	nop       
+ 14c:	07 80 00    	nop       
+ 14e:	f7 7f 00    	nop       
+ 150:	00 80 00    	nop       
+ 152:	08 80 00    	nop       
+ 154:	f8 7f 00    	nop       
+ 156:	ff ff 00    	nop       
+ 158:	07 00 00    	nop       
+ 15a:	f7 ff 00    	nop       
+	...
+ 160:	08 00 00    	nop       
+ 162:	f8 ff 00    	nop       
+ 164:	00 03 00    	nop       
+ 166:	08 03 00    	nop       
+ 168:	f8 02 00    	nop       
+ 16a:	ff 7f 00    	nop       
+ 16c:	07 80 00    	nop       
+ 16e:	f7 7f 00    	nop       
+ 170:	00 80 00    	nop       
+ 172:	08 80 00    	nop       
+ 174:	f8 7f 00    	nop       
+ 176:	ff ff 00    	nop       
+ 178:	07 00 00    	nop       
+ 17a:	f7 ff 00    	nop       

@@ -1,0 +1,3 @@
+t1.o: in function `__reset':
+(.text+0x0): Link Error: relocation truncated to fit: UNSIGNED 5 against `symLO'
+(.text+0x2): Link Error: relocation truncated to fit: UNSIGNED 5 against `symHI'

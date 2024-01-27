@@ -1,0 +1,30 @@
+misc025: .startof_hi., etc. operators:
+
+The objective of this test is to validate
+new assembly operators .startof_hi., .endof.,
+.endof_hi., .sizeof_hi.
+
+
+How to execute the test:
+
+1. Set the environment variable $PIC30_CD
+    to your pic30 tools installation directory
+2. Export $PIC30_CD
+3. Edit the Configuration section of file "go"
+4. Execute "go"
+
+To get verbose output:
+
+Execute "go -v"
+
+File Descriptions:
+-----------------
+info.txt - this file
+go - shell script to automate testing
+t1.c,t2.s - source files
+test.out - output of the test
+expect.out - correct output
+
+
+
+1/10/2022 - GSM

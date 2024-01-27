@@ -1,0 +1,3 @@
+t1.o: in function `__reset':
+(.text+0x4): Link Error: relocation truncated to fit: WORD against `symB3'
+(.text+0x8): Link Error: relocation truncated to fit: WORD against `symB5'

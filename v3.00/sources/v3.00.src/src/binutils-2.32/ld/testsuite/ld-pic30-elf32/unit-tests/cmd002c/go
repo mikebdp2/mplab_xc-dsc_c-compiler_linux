@@ -1,0 +1,125 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+GAS30="$PIC30_CD/bin/xc16-as -p33AK128MC106 -omf=elf -W"
+LIB_DIR="$PIC30_CD/support/dsPIC33A/gld"
+GLD30="$PIC30_CD/bin/xc16-ld -omf=elf -T p33AK128MC106.gld -L $LIB_DIR"
+OBJDUMP="$PIC30_CD/bin/xc16-objdump -omf=elf"
+
+#
+# END CONFIGURATION
+#
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+echo
+echo `head -1 info.txt`
+
+#
+# Part 1: Detect an incorrectly-sized user heap section
+rm -f t1.o
+$GAS30 -o t1.o t1.s --defsym=HEAP_ERROR=1
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GAS30 -o t1.o t1.s --defsym=HEAP_ERROR=1"
+    echo $err
+fi
+
+
+rm -f t.exe t.map
+$GLD30 -o t.exe t1.o --heap=0x100 -Map=t.map > temp 2>&1
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GLD30 -o t.exe t1.o --heap=0x100 -Map=t.map"
+    cat temp
+    echo $err
+fi
+
+if [ $err -ne 0 ]; then
+    if [ $vflag = "on" ]; then
+        echo
+        echo "Detected error in user-defined heap (correct result)"
+        echo
+    fi
+else
+    if [ $vflag = "on" ]; then
+        echo
+        echo "Linker did not detect the user error!!"
+    fi
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+#
+# Part 2: Validate a correctly-sized user heap section
+rm -f t1.o
+$GAS30 -o t1.o t1.s
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GAS30 -o t1.o t1.s"
+    echo $err
+fi
+
+
+rm -f t.exe t.map
+$GLD30 -o t.exe t1.o --heap=0x100 -Map=t.map
+err=$?
+if [ $vflag = "on" ]; then
+    echo
+    echo "$GLD30 -o t.exe t1.o --heap=0x100 -Map=t.map"
+    echo $err
+fi
+
+grep "heap" t.map > temp
+if [ $vflag = "on" ]; then
+    echo
+    echo "Excerpt from map file:"
+    echo
+    cat temp
+    echo
+fi
+
+
+grep -q "0x100" temp
+if [ $? -eq 0 ]; then
+    echo "0x100" > test.out
+else
+    cp temp test.out
+fi
+rm -f temp
+
+if [ $vflag = "on" ]; then
+    diff -b -B test.out expect.out
+else
+    diff -b -B test.out expect.out > /dev/null
+fi
+
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+echo "All Tests Pass"
+echo
+exit 0

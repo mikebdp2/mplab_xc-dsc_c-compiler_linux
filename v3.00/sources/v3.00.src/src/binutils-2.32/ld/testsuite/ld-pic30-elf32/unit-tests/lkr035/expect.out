@@ -1,0 +1,2 @@
+00000810 b _bss_start
+00000820 d _data_start

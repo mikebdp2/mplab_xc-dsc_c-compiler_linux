@@ -1,0 +1,6561 @@
+/*
+  This file was generated from genopc.c on Jun 30 2023.
+  Do not edit.
+*/
+
+{ "abs.d",	ABS32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "abs.s",	ABS32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add",	ADD16_DSP, 1, { DSP_ACCUMULATOR_SELECT_16 },
+		F_ISA32V016| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "add",	ADD16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "add",	ADD32_DSP, 1, { DSP_ACCUMULATOR_SELECT_INHERENT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "add",	ADD32_WFC2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add",	ADD32_WFC, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add",	ADD32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add",	ADD32_WFW, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add",	ADD32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add",	ADD32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "add",	ADD32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "add",	ADD32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "add",	ADD32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "add",	ADD32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "add.b",	ADD32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.b",	ADD32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.b",	ADD32_BFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.b",	ADD32_BFW, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.b",	ADD32_BF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.b",	ADD32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.b",	ADD32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.b",	ADD32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.bz",	ADD32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.bz",	ADD32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.d",	ADD32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.l",	ADD16_L, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "add.l",	ADD16_LN, 3, { REG_WS_MATCH_16, LITERAL_U5BIT_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "add.l",	ADD16_LK, 2, { LITERAL_U5BIT_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "add.l",	ADD32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.l",	ADD32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.l",	ADD32_LFW, 3, { FILE_REG_32_4, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.l",	ADD32_LFW, 3, { FILE_REG_32_4, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.l",	ADD32_LF, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.l",	ADD32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.l",	ADD32_DSP_LK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "add.l",	ADD32_DSP_L0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "add.l",	ADD32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.l",	ADD32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.s",	ADD32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.w",	ADD16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "add.w",	ADD32_WFC2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.w",	ADD32_WFC, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.w",	ADD32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.w",	ADD32_WFW, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.w",	ADD32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "add.w",	ADD32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.w",	ADD32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "add.w",	ADD32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "add.w",	ADD32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "add.w",	ADD32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc",	ADDC16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "addc",	ADDC32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc",	ADDC32_F, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc",	ADDC32_WFW, 3, { FILE_REG_32_2, REG_W0, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc",	ADDC32_WF, 2, { FILE_REG_32_2, REG_W0 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc",	ADDC32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "addc",	ADDC32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "addc",	ADDC32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "addc.b",	ADDC32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.b",	ADDC32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.b",	ADDC32_BFW, 3, { FILE_REG_32, REG_W0, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.b",	ADDC32_BF, 2, { FILE_REG_32, REG_W0 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.b",	ADDC32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.b",	ADDC32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.b",	ADDC32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.bz",	ADDC32_BZFW, 3, { FILE_REG_32, REG_W0, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.bz",	ADDC32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.bz",	ADDC32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.bz",	ADDC32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.l",	ADDC16_L, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "addc.l",	ADDC32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.l",	ADDC32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.l",	ADDC32_LFW, 3, { FILE_REG_32_4, REG_W0, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.l",	ADDC32_LF, 2, { FILE_REG_32_4, REG_W0 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.l",	ADDC32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.l",	ADDC32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.l",	ADDC32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.w",	ADDC16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "addc.w",	ADDC32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.w",	ADDC32_F, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.w",	ADDC32_WFW, 3, { FILE_REG_32_2, REG_W0, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.w",	ADDC32_WF, 2, { FILE_REG_32_2, REG_W0 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "addc.w",	ADDC32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.w",	ADDC32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "addc.w",	ADDC32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and",	AND16_W, 3, { REG_WB_MATCH_16_W0_TO_W14, REG_WS_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and",	AND32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and",	AND32_LFSR, 2, { LITERAL_16BIT_32, REG_FSR_FCR_FEAR },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and",	AND32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_KWUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_W, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WFW, 3, { FILE_REG_32_2, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and",	AND32_WFW, 3, { FILE_REG_32_2, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and",	AND32_WF, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and",	AND32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and",	AND32_WKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and.b",	AND32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.b",	AND32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.b",	AND32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_KBUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_B, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BFW, 3, { FILE_REG_32, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.b",	AND32_BFW, 3, { FILE_REG_32, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.b",	AND32_BF, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.b",	AND32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.b",	AND32_BKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.bz",	AND32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.bz",	AND32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.bz",	AND32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.bz",	AND32_KBZUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.bz",	AND32_BZ, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.bz",	AND32_BZUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.bz",	AND32_BZF2, 3, { FILE_REG_32, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.bz",	AND32_BZF2, 3, { FILE_REG_32, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.bz",	AND32_BZF, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.bz",	AND32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.bz",	AND32_BZKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND16_L, 3, { REG_WB_MATCH_16_W0_TO_W14, REG_WS_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "and.l",	AND32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.l",	AND32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.l",	AND32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_KLUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_L, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LFW, 3, { FILE_REG_32_4, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.l",	AND32_LFW, 3, { FILE_REG_32_4, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.l",	AND32_LF, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.l",	AND32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.l",	AND32_LKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND16_W, 3, { REG_WB_MATCH_16_W0_TO_W14, REG_WS_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "and.w",	AND32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.w",	AND32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.w",	AND32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_KWUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_W, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WFW, 3, { FILE_REG_32_2, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.w",	AND32_WFW, 3, { FILE_REG_32_2, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.w",	AND32_WF, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "and.w",	AND32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and.w",	AND32_WKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1",	AND132_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and1",	AND132_WUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and1",	AND132_WUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and1",	AND132_WKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "and1.b",	AND132_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.b",	AND132_BUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.b",	AND132_BUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.b",	AND132_BKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.bz",	AND132_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.bz",	AND132_BZKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.l",	AND132_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.l",	AND132_LUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.l",	AND132_LUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.l",	AND132_LKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.w",	AND132_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.w",	AND132_WUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.w",	AND132_WUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "and1.w",	AND132_WKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr",	ASR16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "asr",	ASR32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr",	ASR32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr",	ASR32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr",	ASR32_W1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "asr",	ASR32_W, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "asr",	ASR32_WK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "asr.b",	ASR32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.b",	ASR32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.b",	ASR32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.b",	ASR32_B1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.b",	ASR32_B, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.bz",	ASR32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.bz",	ASR32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.bz",	ASR32_BZ1, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.bz",	ASR32_BZ, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WBRS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.l",	ASR16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "asr.l",	ASR16_K, 3, { REG_WB_MATCH_16, LITERAL_U5BIT_16, REG_WDK_MATCH_WB_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "asr.l",	ASR32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.l",	ASR32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.l",	ASR32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.l",	ASR32_L1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.l",	ASR32_L, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.l",	ASR32_LK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.w",	ASR16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "asr.w",	ASR32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.w",	ASR32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.w",	ASR32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "asr.w",	ASR32_W1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.w",	ASR32_W, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asr.w",	ASR32_WK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "asrm",	ASRM32_LK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WS_32_W1_TO_W14},
+		F_ISA32V0,
+		"semantics"
+},
+{ "asrm",	ASRM32_LW, 3, { REG_WS_PPP_32_ALT2, REG_WB_32, REG_WS_32_W1_TO_W14},
+		F_ISA32V0,
+		"semantics"
+},
+{ "asrm.l",	ASRM32_LK2, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WS_32_W1_TO_W14},
+		F_ISA32V0,
+		"semantics"
+},
+{ "asrm.l",	ASRM32_LW2, 3, { REG_WS_PPP_32_ALT2, REG_WB_32, REG_WS_32_W1_TO_W14},
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr",	BCLR16_W, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bclr",	BCLR32_W, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bclr",	BCLR32_, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bclr",	BCLR32_WUSR, 2, { REG_USRMODE_PPP, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bclr",	BCLR32_FW, 2, { FILE_REG20_32_2, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bclr.b",	BCLR16_B, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bclr.b",	BCLR32_B, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.b",	BCLR32_BUSR, 2, { REG_USRMODE_PPP, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.b",	BCLR32_FB, 2, { FILE_REG20_32, LITERAL_3BIT_U32F },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bclr.bz",	BCLR32_BZ, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.l",	BCLR16_L, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "bclr.l",	BCLR32_L, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.l",	BCLR32_LUSR, 2, { REG_USRMODE_PPP, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.l",	BCLR32_FL, 2, { FILE_REG20_32_4, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bclr.w",	BCLR16_W, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bclr.w",	BCLR32_W, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.w",	BCLR32_WUSR, 2, { REG_USRMODE_PPP, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bclr.w",	BCLR32_FW, 2, { FILE_REG20_32_2, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext",	BFEXT32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_WS_PPP_32, REG_WB_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext",	BFEXT32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_USRMODE_PPP, REG_WB_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext",	BFEXT64_W, 4, { BF_LSOFFSET_64, BF_MSOFFSET_64, FILE_REG20_32_2, REG_WB_64_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext.l",	BFEXT32_L, 4, { BF_LSOFFSET_32, BF_MSOFFSET_32, REG_WS_PPP_32, REG_WB_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext.l",	BFEXT32_L, 4, { BF_LSOFFSET_32, BF_MSOFFSET_32, REG_USRMODE_PPP, REG_WB_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext.l",	BFEXT64_L, 4, { BF_LSOFFSET_64, BF_MSOFFSET_64, FILE_REG20_32_4, REG_WB_64_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext.w",	BFEXT32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_WS_PPP_32, REG_WB_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext.w",	BFEXT32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_USRMODE_PPP, REG_WB_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfext.w",	BFEXT64_W, 4, { BF_LSOFFSET_64, BF_MSOFFSET_64, FILE_REG20_32_2, REG_WB_64_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins",	BFINS32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins",	BFINS32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_WB_32_W0_TO_W14, REG_USRMODE_PPP },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins",	BFINS64_W, 4, { BF_LSOFFSET_64, BF_MSOFFSET_64, REG_WB_64_W0_TO_W14, FILE_REG20_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins",	BFINS64_KW, 4, { BFL_LSOFFSET_64, BFL_MSOFFSET_64,      LITERAL_16BIT_64, REG_WS_PPP_64 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.l",	BFINS32_L, 4, { BF_LSOFFSET_32, BF_MSOFFSET_32, REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.l",	BFINS32_L, 4, { BF_LSOFFSET_32, BF_MSOFFSET_32, REG_WB_32_W0_TO_W14, REG_USRMODE_PPP },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.l",	BFINS64_L, 4, { BF_LSOFFSET_64, BF_MSOFFSET_64, REG_WB_64_W0_TO_W14, FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.l",	BFINS64_KL, 4, { BFL_LSOFFSET_64, BFL_MSOFFSET_64,      LITERAL_16BIT_64, REG_WS_PPP_64 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.w",	BFINS32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.w",	BFINS32_W, 4, { BF_LSOFFSETW_32, BF_MSOFFSETW_32, REG_WB_32_W0_TO_W14, REG_USRMODE_PPP },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.w",	BFINS64_W, 4, { BF_LSOFFSET_64, BF_MSOFFSET_64, REG_WB_64_W0_TO_W14, FILE_REG20_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bfins.w",	BFINS64_KW, 4, { BFL_LSOFFSET_64, BFL_MSOFFSET_64,      LITERAL_16BIT_64, REG_WS_PPP_64 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bootswp",	BOOTSWP32, 1, { REG_WS_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT| F_DUALPARTITION,
+		"semantics"
+},
+{ "bra",	BRA32_PC1, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC1A, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC1B, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC1C, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC2, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC2A, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC2C, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC2B, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC3, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC3A, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC3B, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC3C, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC5, 2, { BRANCH_ON_DSP_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC5A, 2, { BRANCH_ON_DSP_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC5B, 2, { BRANCH_ON_DSP_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC5C, 2, { BRANCH_ON_DSP_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC4, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC4A, 2, { BRANCH_ON_CONDITION_OPERAND_32, BRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_PC, 1, { BRANCH_LABEL_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bra",	BRA32_WPC, 1, { REG_WS_32_W0_TO_W14 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "break",	BREAK16, 0, { 0 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "break",	BREAK32, 0, { 0 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset",	BSET16_W, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bset",	BSET32_W, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bset",	BSET32_, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bset",	BSET32_WUSR, 2, { REG_USRMODE_PPP, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bset",	BSET32_FW, 2, { FILE_REG20_32, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bset.b",	BSET16_B, 2, { REG_WS_16, LITERAL_U3BIT_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bset.b",	BSET32_B, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.b",	BSET32_BUSR, 2, { REG_USRMODE_PPP, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.b",	BSET32_FB, 2, { FILE_REG20_32, LITERAL_3BIT_U32F },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bset.bz",	BSET32_BZ, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.l",	BSET16_L, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "bset.l",	BSET32_L, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32  },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.l",	BSET32_LUSR, 2, { REG_USRMODE_PPP, LITERAL_5BIT_U32  },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.l",	BSET32_FL, 2, { FILE_REG20_32, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bset.w",	BSET16_W, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bset.w",	BSET32_W, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.w",	BSET32_WUSR, 2, { REG_USRMODE_PPP, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bset.w",	BSET32_FW, 2, { FILE_REG20_32, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "bsw.bc",	BSW32_BC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bsw.bz",	BSW32_BZ, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bsw.c",	BSW32_WC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "bsw.lc",	BSW32_LC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bsw.lz",	BSW16_LZ, 2, { REG_WS_16, REG_WB_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "bsw.lz",	BSW32_LZ, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bsw.wc",	BSW32_WC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bsw.wz",	BSW16_WZ, 2, { REG_WS_16, REG_WB_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "bsw.wz",	BSW32_WZ, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "bsw.z",	BSW16_WZ, 2, { REG_WS_16, REG_WB_16_W0_TO_W14 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "bsw.z",	BSW32_WZ, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btg",	BTG16_W, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "btg",	BTG32_W, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btg",	BTG32_, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btg",	BTG32_WUSR, 2, { REG_USRMODE_PPP, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btg",	BTG32_FW, 2, { FILE_REG20_32, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btg.b",	BTG16_B, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btg.b",	BTG32_B, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btg.b",	BTG32_BUSR, 2, { REG_USRMODE_PPP, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btg.b",	BTG32_FB, 2, { FILE_REG20_32, LITERAL_3BIT_U32F },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btg.l",	BTG16_L, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btg.l",	BTG32_L, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btg.l",	BTG32_LUSR, 2, { REG_USRMODE_PPP, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btg.l",	BTG32_FL, 2, { FILE_REG20_32, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btg.w",	BTG16_W, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btg.w",	BTG32_W, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btg.w",	BTG32_WUSR, 2, { REG_USRMODE_PPP, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btg.w",	BTG32_FW, 2, { FILE_REG20_32, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btst",	BTST16_, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "btst",	BTST32_L, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btst",	BTST32_FW, 2, { FILE_REG20_32_2, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btst.b",	BTST32_B, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btst.b",	BTST32_FB, 2, { FILE_REG20_32, LITERAL_3BIT_U32F },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btst.bc",	BTST32_KBC, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.bc",	BTST32_WBC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.bz",	BTST32_KBZ, 2, { REG_WS_PPP_32, LITERAL_3BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.bz",	BTST32_WBZ, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.c",	BTST32_KWC, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btst.c",	BTST32_WWC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btst.l",	BTST32_FL, 2, { FILE_REG20_32_4, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btst.lc",	BTST32_KLC, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.lc",	BTST32_WLC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.lz",	BTST16_WLZ, 2, { REG_WS_16, REG_WB_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btst.lz",	BTST16_KLZ, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btst.lz",	BTST32_KLZ, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.lz",	BTST32_WLZ2, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.w",	BTST32_FW, 2, { FILE_REG20_32_2, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btst.wc",	BTST32_KWC, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.wc",	BTST32_WWC, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.wz",	BTST16_WWZ, 2, { REG_WS_16, REG_WB_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btst.wz",	BTST32_KWZ, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.wz",	BTST32_WWZ2, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btst.z",	BTST16_WWZ, 2, { REG_WS_16, REG_WB_16_W0_TO_W14 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "btst.z",	BTST32_KWZ, 2, { REG_WS_PPP_32, LITERAL_4BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btst.z",	BTST32_WWZ2, 2, { REG_WS_PPP_32, REG_WB_32_ALT_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btsts",	BTSTS32_, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btsts",	BTSTS32_FW, 2, { FILE_REG20_32_2, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btsts.b",	BTSTS32_FB, 2, { FILE_REG20_32, LITERAL_3BIT_U32F },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btsts.bc",	BTSTS32_BC, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btsts.bz",	BTSTS16_BZ, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btsts.bz",	BTSTS32_BZ, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btsts.c",	BTSTS32_WC, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "btsts.l",	BTSTS32_FL, 2, { FILE_REG20_32_4, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btsts.lc",	BTSTS32_LC, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btsts.lz",	BTSTS16_LZ, 2, { REG_WS_16, LITERAL_U5BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "btsts.lz",	BTSTS32_LZ, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btsts.w",	BTSTS32_FW, 2, { FILE_REG20_32_2, LITERAL_345BIT_U32F },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "btsts.wc",	BTSTS32_WC, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btsts.wz",	BTSTS32_WZ, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "btsts.z",	BTSTS32_WZ, 2, { REG_WS_PPP_32, LITERAL_5BIT_U32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "call",	CALL32_W, 1, { REG_WS_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "call",	CALL32, 1, { CALL_OPERAND_24 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "clr",	CLR16_DSP, 1, { DSP_ACCUMULATOR_SELECT_16 },
+		F_ISA32V016| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "clr",	CLR32_DSP, 1, { DSP_ACCUMULATOR_SELECT_INHERENT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "clr",	CLR32_W, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr",	CLR32_WUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr",	CLR32_WF, 1, { FILE_REG20_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "clr.b",	CLR32_B, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr.b",	CLR32_BUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr.b",	CLR32_BF, 1, { FILE_REG20_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "clr.l",	CLR32_L, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr.l",	CLR32_LUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr.l",	CLR32_LF, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "clr.w",	CLR32_W, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr.w",	CLR32_WUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "clr.w",	CLR32_WF, 1, { FILE_REG20_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "clrwdt",	CLRWDT16, 0, { 0 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "clrwdt",	CLRWDT32, 0, { 0 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "com",	COM16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "com",	COM32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com",	COM32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com",	COM32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com",	COM32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "com.b",	COM32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.b",	COM32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.b",	COM32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.b",	COM32_B, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "com.bz",	COM32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.bz",	COM32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.bz",	COM32_BZF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.bz",	COM32_BZ, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "com.l",	COM16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "com.l",	COM32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.l",	COM32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.l",	COM32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.l",	COM32_L, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "com.w",	COM16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "com.w",	COM32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.w",	COM32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.w",	COM32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "com.w",	COM32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cos.s",	COS32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp",	CP16_WNK, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cp",	CP16_W, 2, { REG_WB_16, REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cp",	CP32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp",	CP32_W, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp",	CP32_WK, 2, { REG_WD_32, LITERAL_16BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp",	CP32_WFW, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp",	CP32_WNK, 2, { REG_WS_PPP_32, LITERAL_U13BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp.b",	CP32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp.b",	CP32_B, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.b",	CP32_BK, 2, { REG_WD_32, LITERAL_16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.b",	CP32_BFW, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp.b",	CP32_BNK, 2, { REG_WS_PPP_32, LITERAL_U8BIT_ALT2_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.l",	CP16_LNK, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cp.l",	CP16_L, 2, { REG_WB_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cp.l",	CP32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp.l",	CP32_L, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.l",	CP32_LK, 2, { REG_WD_32, LITERAL_16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.l",	CP32_LFW, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp.l",	CP32_LNK, 2, { REG_WS_PPP_32, LITERAL_U13BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.w",	CP16_WNK, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cp.w",	CP16_W, 2, { REG_WB_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cp.w",	CP32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp.w",	CP32_W, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.w",	CP32_WK, 2, { REG_WD_32, LITERAL_16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp.w",	CP32_WFW, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp.w",	CP32_WNK, 2, { REG_WS_PPP_32, LITERAL_U13BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cp0",	CP016_W, 1, { REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cp0",	CP032_W, 1, { REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp0",	CP032_WF, 1, { FILE_REG20_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp0.b",	CP032_B, 1, { REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp0.b",	CP032_BF, 1, { FILE_REG20_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp0.l",	CP016_L, 1, { REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cp0.l",	CP032_L, 1, { REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp0.l",	CP032_LF, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cp0.w",	CP016_W, 1, { REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cp0.w",	CP032_W, 1, { REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cp0.w",	CP032_WF, 1, { FILE_REG20_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb",	CPB16_WK, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cpb",	CPB16_W, 2, { REG_WD_16, REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "cpb",	CPB32_WFWC, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb",	CPB32_WFW, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb",	CPB32_KW, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cpb",	CPB32_WK, 2, { REG_WS_PPP_32, LITERAL_U13BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cpb",	CPB32_W, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "cpb.b",	CPB32_BFWC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb.b",	CPB32_BFW, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb.b",	CPB32_KB, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.b",	CPB32_BK, 2, { REG_WS_PPP_32, LITERAL_U8BIT_ALT2_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.b",	CPB32_B, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.l",	CPB16_LK, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cpb.l",	CPB16_L, 2, { REG_WD_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cpb.l",	CPB32_LFWC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb.l",	CPB32_LFW, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb.l",	CPB32_KL, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.l",	CPB32_LK, 2, { REG_WS_PPP_32, LITERAL_U13BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.l",	CPB32_L, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.w",	CPB16_WK, 2, { REG_WS_16, LITERAL_4BIT_U16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cpb.w",	CPB16_W, 2, { REG_WD_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "cpb.w",	CPB32_WFWC, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb.w",	CPB32_WFW, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "cpb.w",	CPB32_KW, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.w",	CPB32_WK, 2, { REG_WS_PPP_32, LITERAL_U13BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpb.w",	CPB32_W, 2, { REG_WD_32, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpn.d",	CPN32_D, 2, { REG_FB_32_DBL, REG_FS_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpn.s",	CPN32_S, 2, { REG_FB_32, REG_FS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpq.d",	CPQ32_D, 2, { REG_FB_32_DBL, REG_FS_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cpq.s",	CPQ32_S, 2, { REG_FB_32, REG_FS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cps.d",	CPS32_D, 2, { REG_FB_32_DBL, REG_FS_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "cps.s",	CPS32_S, 2, { REG_FB_32, REG_FS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ctxtswp",	CTXTSWP16_K, 1, { LITERAL_3BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "ctxtswp",	CTXTSWP32_K, 1, { LITERAL_3BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ctxtswp",	CTXTSWP32, 1, { REG_WS_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "dec",	DEC16_1, 2, { REG_WS_MATCH_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "dec",	DEC32_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "dec",	DEC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec",	DEC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec",	DEC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.b",	DEC32_BK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "dec.b",	DEC32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.b",	DEC32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.b",	DEC32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.bz",	DEC32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.bz",	DEC32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.l",	DEC32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.l",	DEC32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.l",	DEC32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.w",	DEC32_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "dec.w",	DEC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.w",	DEC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec.w",	DEC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2",	DEC216, 2, { REG_WS_MATCH_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "dec2",	DEC232_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "dec2",	DEC232_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2",	DEC232_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2",	DEC232_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.b",	DEC232_BK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "dec2.b",	DEC232_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.b",	DEC232_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.b",	DEC232_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.bz",	DEC232_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.bz",	DEC232_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.l",	DEC232_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.l",	DEC232_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.l",	DEC232_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.w",	DEC232_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "dec2.w",	DEC232_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.w",	DEC232_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "dec2.w",	DEC232_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "di2f.d",	DI2F32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.de",	DI2F32_DE, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.dn",	DI2F32_DN, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.dp",	DI2F32_DP, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.dz",	DI2F32_DZ, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.s",	DI2F32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.se",	DI2F32_SE, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.sn",	DI2F32_SN, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.sp",	DI2F32_SP, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "di2f.sz",	DI2F32_SZ, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "disictl",	DISICTL32_L, 1, { LITERAL_U3BIT_16 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "disictl",	DISICTL32_WL, 2, { LITERAL_U3BIT_16, REG_WD_QQQ_H_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "disictl",	DISICTL32_W, 1, { REG_WS_PPP_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "disictl",	DISICTL32_WW, 2, { REG_WS_PPP_32, REG_WD_QQQ_H_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "div.d",	DIV32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "div.s",	DIV32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divf",	DIVF32_W, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "divf.l",	DIVF32_L, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divf.w",	DIVF32_W, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divfl",	DIVFL32_L, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divs",	DIVS32_W, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "divs.l",	DIVS32_L, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divs.w",	DIVS32_W, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divsl",	DIVSL32_L, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divu",	DIVU32_W, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "divu.l",	DIVU32_L, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divu.w",	DIVU32_W, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "divul",	DIVUL32_L, 2, { REG_DIV_WM_32, REG_DIV_WN_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "dtb",	DTB32_PC, 2, { REG_WD_32_W0_TO_W14, BRANCH_LABEL16_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ed",	ED32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ed",	ED32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ed.l",	ED32_DSP_L, 3, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ed.l",	ED32_DSP_LAWB, 4, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ed.w",	ED32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ed.w",	ED32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "edac",	EDAC32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "edac",	EDAC32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "edac.l",	EDAC32_DSP_L, 3, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "edac.l",	EDAC32_DSP_LAWB, 4, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "edac.w",	EDAC32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "edac.w",	EDAC32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "exch",	EXCH32, 2, { REG_WS_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.d",	F2DI32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.de",	F2DI32_DE, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.dn",	F2DI32_DN, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.dp",	F2DI32_DP, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.dz",	F2DI32_DZ, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.s",	F2DI32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.se",	F2DI32_SE, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.sn",	F2DI32_SN, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.sp",	F2DI32_SP, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2di.sz",	F2DI32_SZ, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.d",	F2LI32_D, 2, { REG_FS_32_DBL, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.de",	F2LI32_DE, 2, { REG_FS_32_DBL, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.dn",	F2LI32_DN, 2, { REG_FS_32_DBL, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.dp",	F2LI32_DP, 2, { REG_FS_32_DBL, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.dz",	F2LI32_DZ, 2, { REG_FS_32_DBL, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.s",	F2LI32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.se",	F2LI32_SE, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.sn",	F2LI32_SN, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.sp",	F2LI32_SP, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "f2li.sz",	F2LI32_SZ, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "fbcl",	FBCL32_W, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "fbcl.l",	FBCL32_L, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "fbcl.w",	FBCL32_W, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC1, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC4, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC5, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC3, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC2, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC6, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fbra",	FBRA32_FPC7, 2, { F_BRANCH_ON_CONDITION_OPERAND_32, FBRANCH_LABEL_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG| F_PCREL_INSN| F_HAS_F_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "fcswh.l",	FCSWH32_L, 1, { LITERAL_16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "fcswl.l",	FCSWL32_L, 1, { LITERAL_16BIT_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ff1l",	FF1L32_W, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ff1l.l",	FF1L32_L, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ff1l.w",	FF1L32_W, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ff1r",	FF1R32_W, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ff1r.l",	FF1R32_L, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ff1r.w",	FF1R32_W, 2, { REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim",	FLIM32_WW, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "flim",	FLIM32_W, 2, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "flim.d",	FLIM32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.l",	FLIM32_WL, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.l",	FLIM32_L, 2, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.lv",	FLIM32_WLV, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.s",	FLIM32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.v",	FLIM32_WWV, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "flim.v",	FLIM32_WVW, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "flim.vl",	FLIM32_WVL, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "flim.vw",	FLIM32_WVW, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "flim.w",	FLIM32_WW, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.w",	FLIM32_W, 2, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "flim.wv",	FLIM32_WWV, 3, { REG_WB_32_W0_TO_W13, REG_WS_PPP_32_W0_TO_W14, REG_WD_QQQ_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "goto",	GOTO32_W, 1, { REG_WS_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "goto",	GOTO32_K, 1, { CALL_OPERAND_24 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc",	INC32_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc",	INC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc",	INC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc",	INC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.b",	INC32_BK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc.b",	INC32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.b",	INC32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.b",	INC32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.bz",	INC32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.bz",	INC32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.l",	INC16_L1, 2, { REG_WS_MATCH_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "inc.l",	INC32_LK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc.l",	INC32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.l",	INC32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.l",	INC32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.w",	INC32_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc.w",	INC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.w",	INC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc.w",	INC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2",	INC232_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc2",	INC232_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2",	INC232_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2",	INC232_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.b",	INC232_BK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc2.b",	INC232_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.b",	INC232_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.b",	INC232_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.bz",	INC232_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.bz",	INC232_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.l",	INC216_L2, 2, { REG_WS_MATCH_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "inc2.l",	INC232_LK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc2.l",	INC232_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.l",	INC232_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.l",	INC232_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.w",	INC232_WK, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "inc2.w",	INC232_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.w",	INC232_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "inc2.w",	INC232_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior",	IOR16_W, 3, { REG_WB_MATCH_16_W0_TO_W14, REG_WS_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior",	IOR32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior",	IOR32_LFSR, 2, { LITERAL_16BIT_32, REG_FSR_FCR_FEAR },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior",	IOR32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_KWUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WFW, 3, { FILE_REG_32_2, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior",	IOR32_WFW, 3, { FILE_REG_32_2, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior",	IOR32_WF, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior",	IOR32_W, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior",	IOR32_WKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "ior.b",	IOR32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.b",	IOR32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.b",	IOR32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_KBUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BUSRSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BFW, 3, { FILE_REG_32, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.b",	IOR32_BFW, 3, { FILE_REG_32, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.b",	IOR32_BF, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.b",	IOR32_B, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.b",	IOR32_BKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.bz",	IOR32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.bz",	IOR32_KBZUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZFW, 3, { FILE_REG_32, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZFW, 3, { FILE_REG_32, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZF, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZ, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.bz",	IOR32_BZKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR16_L, 3, { REG_WB_MATCH_16_W0_TO_W14, REG_WS_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "ior.l",	IOR32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.l",	IOR32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.l",	IOR32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_KLUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LFW, 3, { FILE_REG_32_4, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.l",	IOR32_LFW, 3, { FILE_REG_32_4, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.l",	IOR32_LF, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.l",	IOR32_L, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.l",	IOR32_LKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR16_W, 3, { REG_WB_MATCH_16_W0_TO_W14, REG_WS_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "ior.w",	IOR32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.w",	IOR32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.w",	IOR32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_KWUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WUSRUSR, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WUSRW, 3, { REG_WB_32_W0_TO_W14, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WWUSR, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WFW, 3, { FILE_REG_32_2, REG_WD_32_W0_TO_W14, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.w",	IOR32_WFW, 3, { FILE_REG_32_2, REG_WN_32_W0_TO_W14, REG_WN_32_W0_TO_W14_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.w",	IOR32_WF, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ior.w",	IOR32_W, 3, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WUSRKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WUSRK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ior.w",	IOR32_WKUSR, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lac",	LAC32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "lac",	LAC32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "lac.l",	LAC32_DSP_L0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "lac.l",	LAC32_DSP_LK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "lac.w",	LAC32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "lac.w",	LAC32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "li2f.d",	LI2F32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL},
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.de",	LI2F32_DE, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.dn",	LI2F32_DN, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.dp",	LI2F32_DP, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.dz",	LI2F32_DZ, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.s",	LI2F32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.se",	LI2F32_SE, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.sn",	LI2F32_SN, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.sp",	LI2F32_SP, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "li2f.sz",	LI2F32_SZ, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "llac",	LLAC32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "llac",	LLAC32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "llac.l",	LLAC32_DSP_L0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "llac.l",	LLAC32_DSP_LK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "llac.w",	LLAC32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "llac.w",	LLAC32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "lnk",	LNK16_LS, 1, { LITERAL_U7BIT_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "lnk",	LNK32, 1, { LITERAL_U16BIT_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr",	LSR16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "lsr",	LSR32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr",	LSR32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr",	LSR32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr",	LSR32_W1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "lsr",	LSR32_W, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "lsr",	LSR32_WK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "lsr.b",	LSR32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.b",	LSR32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.b",	LSR32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.b",	LSR32_B1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.b",	LSR32_B, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.bz",	LSR32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.bz",	LSR32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.bz",	LSR32_BZ1, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.bz",	LSR32_BZ, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WBRS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.l",	LSR16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "lsr.l",	LSR16_K, 3, { REG_WB_MATCH_16, LITERAL_U5BIT_16, REG_WDK_MATCH_WB_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "lsr.l",	LSR32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.l",	LSR32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.l",	LSR32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.l",	LSR32_L1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.l",	LSR32_L, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.l",	LSR32_LK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.w",	LSR16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "lsr.w",	LSR32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.w",	LSR32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.w",	LSR32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "lsr.w",	LSR32_W1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.w",	LSR32_W, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsr.w",	LSR32_WK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsrm",	LSRM32_LK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WS_32_W1_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsrm",	LSRM32_L, 3, { REG_WS_PPP_32_ALT2, REG_WB_32, REG_WS_32_W1_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "lsrm.l",	LSRM32_LK2, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WS_32_W1_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "lsrm.l",	LSRM32_L2, 3, { REG_WS_PPP_32_ALT2, REG_WB_32, REG_WS_32_W1_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "luac",	LUAC32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "luac",	LUAC32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "luac.l",	LUAC32_DSP_L0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "luac.l",	LUAC32_DSP_LK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "luac.w",	LUAC32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "luac.w",	LUAC32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mac",	MAC32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mac",	MAC32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mac.d",	MAC32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mac.l",	MAC32_DSP_L, 3, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mac.l",	MAC32_DSP_LAWB, 4, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mac.s",	MAC32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mac.w",	MAC32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mac.w",	MAC32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "max",	MAX16_DSP, 1, { DSP_ACCUMULATOR_SELECT_16 },
+		F_ISA32V016| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max",	MAX32_DSP, 1, { DSP_ACCUMULATOR_SELECT_INHERENT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max",	MAX32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max",	MAX32_DSP_IW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max",	MAX32_DSP_W_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max",	MAX32_DSP_IW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max",	MAX32_W, 2, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "max.d",	MAX32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "max.l",	MAX32_DSP_L, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.l",	MAX32_DSP_L_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.l",	MAX32_L, 2, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "max.lv",	MAX32_DSP_LV, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.lv",	MAX32_DSP_LV_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.s",	MAX32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "max.v",	MAX32_DSP_WV, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.v",	MAX32_DSP_VW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.v",	MAX32_DSP_VIW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.v",	MAX32_DSP_WV_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.v",	MAX32_DSP_VW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.v",	MAX32_DSP_VIW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.vl",	MAX32_DSP_VL, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.vl",	MAX32_DSP_VL_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.vw",	MAX32_DSP_VW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.vw",	MAX32_DSP_VW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "max.w",	MAX32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.w",	MAX32_DSP_W_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.w",	MAX32_W, 2, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "max.wv",	MAX32_DSP_WV, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "max.wv",	MAX32_DSP_WV_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "maxnm.d",	MAXNM32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "maxnm.s",	MAXNM32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "min",	MIN16_DSP, 1, { DSP_ACCUMULATOR_SELECT_16 },
+		F_ISA32V016| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min",	MIN32_DSP, 1, { DSP_ACCUMULATOR_SELECT_INHERENT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min",	MIN32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min",	MIN32_DSP_IW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min",	MIN32_DSP_W_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min",	MIN32_DSP_IW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min",	MIN32_W, 2, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "min.d",	MIN32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "min.l",	MIN32_DSP_L, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.l",	MIN32_DSP_L_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.l",	MIN32_L, 2, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "min.lv",	MIN32_DSP_LV, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.lv",	MIN32_DSP_LV_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.s",	MIN32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "min.v",	MIN32_DSP_WV, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.v",	MIN32_DSP_VW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.v",	MIN32_DSP_VIW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.v",	MIN32_DSP_WV_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.v",	MIN32_DSP_VW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.v",	MIN32_DSP_VIW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.vl",	MIN32_DSP_VL, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.vl",	MIN32_DSP_VL_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.vw",	MIN32_DSP_VW, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.vw",	MIN32_DSP_VW_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "min.w",	MIN32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.w",	MIN32_DSP_W_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.w",	MIN32_W, 2, { REG_WB_32_W0_TO_W14, REG_WS_PPP_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "min.wv",	MIN32_DSP_WV, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "min.wv",	MIN32_DSP_WV_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "minnm.d",	MINNM32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "minnm.s",	MINNM32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov",	MOV16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV16_POPW, 2, { REG_IMPLIED_WPD, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV16_PSHW, 2, { REG_WS_16, REG_IMPLIED_WPI },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_W, 2, { G_REG_32, REG_WD_QQQ_H_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_WWUSR, 2, { REG_USRMODE_PPP, REG_WD_QQQ_H_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_WUSRW, 2, { G_REG_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_WUSRUSR, 2, { REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_LOW, 2, { LO_SRC_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_WLO, 2, { REG_WS_32, LO_DST_REG_32_2 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_FPFPLLO, 2, { LO_SRC_REG_32_4, REG_FD2_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov",	MOV32_FPLLOFP, 2, { REG_FD2_32, LO_SRC_REG_32_4 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_FW, 2, { FILE_REG20_32_2, REG_WD_32_SPLIT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_WF, 2, { REG_WD_32_SPLIT, FILE_REG20_32_2 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov",	MOV32_WK, 2, { LITERAL_16BIT_MOVL, REG_WNLIT24_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov.b",	MOV32_B, 2, { G_REG_32, REG_WD_QQQ_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.b",	MOV32_BWUSR, 2, { REG_USRMODE_PPP, REG_WD_QQQ_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.b",	MOV32_BUSRW, 2, { G_REG_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.b",	MOV32_BUSRUSR, 2, { REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.b",	MOV32_LOB, 2, { LO_SRC_REG_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.b",	MOV32_BLO, 2, { REG_WS_32, LO_DST_REG_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.b",	MOV32_BK, 2, { LITERAL_8BIT_SPLIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov.b",	MOV32_BF, 2, { REG_WD_32_SPLIT, FILE_REG20_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.bz",	MOV32_BZ, 2, { G_REG_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.bz",	MOV32_BZWUSR, 2, { REG_USRMODE_PPP, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.bz",	MOV32_LOBZ, 2, { LO_SRC_REG_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.bz",	MOV32_FBZ, 2, { FILE_REG20_32, REG_WD_32_SPLIT_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.bz",	MOV32_BZK, 2, { LITERAL_8BIT_MOVL, REG_WNLIT24_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mov.d",	MOV32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_POPLL, 2, { REG_IMPLIED_PD, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_PSHLL, 2, { REG_WS_16, REG_IMPLIED_PI },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_WFP, 2, { REG_WS_16, REG_FD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_FPW, 2, { REG_FSRS_16, REG_FWD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_WK, 2, { REG_WNS_16, REG_W15_MINUS_5BIT_OFFSET },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_W14K, 2, { REG_WNS_16, REG_W14_PLUS_5BIT_OFFSET },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_KW, 2, { REG_W15_MINUS_5BIT_OFFSET, REG_WNS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_KW14, 2, { REG_W14_PLUS_5BIT_OFFSET, REG_WNS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV16_LN, 2, { LITERAL_U5BIT_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.l",	MOV32_L, 2, { G_REG_32, REG_WD_QQQ_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_LWUSR, 2, { REG_USRMODE_PPP, REG_WD_QQQ_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_LUSRW, 2, { G_REG_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_LUSRUSR, 2, { REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_LOL, 2, { LO_SRC_REG_32_4, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_LLO, 2, { REG_WS_32, LO_DST_REG_32_4 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_WFSR, 2, { G_REG_32, REG_F_FSR_FCR_FEAR_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_FPFPLLO2, 2, { LO_SRC_REG_32_4, REG_FD2_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_FSRW, 2, { REG_F_ANY_FSR_32, REG_WS_PPP_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_FPLLOFP2, 2, { REG_FD2_32, LO_SRC_REG_32_4 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_FL, 2, { FILE_REG_MOV_32, REG_WD_32_SPLIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV32_LF, 2, { REG_WD_32_SPLIT, FILE_REG_MOV_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.l",	MOV64_FK, 2, { LITERAL_32BIT_64, REG_F_FSR_FCR_64 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mov.l",	MOV64_LLK, 2, { LITERAL_32BIT_64, REG_WD_QQQ_H_64 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.s",	MOV32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.sl",	MOV32_SLK, 2, { LITERAL_24BIT_32, REG_WNLIT24_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.w",	MOV16_POPW, 2, { REG_IMPLIED_WPD, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.w",	MOV16_PSHW, 2, { REG_WS_16, REG_IMPLIED_WPI },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mov.w",	MOV32_W, 2, { G_REG_32, REG_WD_QQQ_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_WWUSR, 2, { REG_USRMODE_PPP, REG_WD_QQQ_H_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_WUSRW, 2, { G_REG_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_WUSRUSR, 2, { REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_LOW, 2, { LO_SRC_REG_32_2, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_WLO, 2, { REG_WS_32, LO_DST_REG_32_2 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_FW, 2, { FILE_REG20_32_2, REG_WD_32_SPLIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_WF, 2, { REG_WD_32_SPLIT, FILE_REG20_32_2 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mov.w",	MOV32_WK, 2, { LITERAL_16BIT_MOVL, REG_WNLIT24_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "movc.d",	MOVC32_D, 2, { LITERAL_5BIT_ALT_U32, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movc.s",	MOVC32_S, 2, { LITERAL_5BIT_ALT_U32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movif",	MOVIF32_CMOVW, 4, { MOVIF_CONDITION_OPERAND_32, REG_WB_32, REG_WS_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED| F_HAS_BRANCH_FLAG,
+		"semantics"
+},
+{ "movif.b",	MOVIF32_CMOVB, 4, { MOVIF_CONDITION_OPERAND_32, REG_WB_32, REG_WS_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG,
+		"semantics"
+},
+{ "movif.bz",	MOVIF32_CMOVBZ, 4, { MOVIF_CONDITION_OPERAND_32, REG_WB_32, REG_WS_32, REG_WD_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG,
+		"semantics"
+},
+{ "movif.l",	MOVIF32_CMOVL, 4, { MOVIF_CONDITION_OPERAND_32, REG_WB_32, REG_WS_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG,
+		"semantics"
+},
+{ "movif.w",	MOVIF32_CMOVW, 4, { MOVIF_CONDITION_OPERAND_32, REG_WB_32, REG_WS_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_HAS_BRANCH_FLAG,
+		"semantics"
+},
+{ "movr",	MOVR32_W, 2, { REG_WS_PPP_32_W0_TO_W14_BIT_REV, REG_WD_QQQ_32_W0_TO_W14_BIT_REV },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "movr.l",	MOVR32_L, 2, { REG_WS_PPP_32_W0_TO_W14_BIT_REV, REG_WD_QQQ_32_W0_TO_W14_BIT_REV },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movr.w",	MOVR32_W, 2, { REG_WS_PPP_32_W0_TO_W14_BIT_REV, REG_WD_QQQ_32_W0_TO_W14_BIT_REV },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movs",	MOVS32_WK, 2, { LITERAL_16BIT_SPLIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "movs",	MOVS32_WKUSR, 2, { LITERAL_16BIT_SPLIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "movs.b",	MOVS32_BK, 2, { LITERAL_8BIT_SPLIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movs.b",	MOVS32_BKUSR, 2, { LITERAL_8BIT_SPLIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movs.l",	MOVS32_LK, 2, { LITERAL_16BIT_SPLIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movs.l",	MOVS32_LKUSR, 2, { LITERAL_16BIT_SPLIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movs.w",	MOVS32_WK, 2, { LITERAL_16BIT_SPLIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "movs.w",	MOVS32_WKUSR, 2, { LITERAL_16BIT_SPLIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mpy",	MPY32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mpy",	MPY32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mpy.l",	MPY32_DSP_L, 3, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mpy.l",	MPY32_DSP_LAWB, 4, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mpy.n",	MPY32_DSP_NW, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mpy.w",	MPY32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mpy.w",	MPY32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mpyn",	MPYN32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mpyn",	MPYN32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mpyn.l",	MPYN32_DSP_L, 3, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mpyn.l",	MPYN32_DSP_LAWB, 4, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mpyn.w",	MPYN32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mpyn.w",	MPYN32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "msc",	MSC32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "msc",	MSC32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "msc.l",	MSC32_DSP_L, 3, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "msc.l",	MSC32_DSP_LAWB, 4, { DSP_X_L_FETCH_OPERATION_32, DSP_Y_L_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "msc.w",	MSC32_DSP_W, 3, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "msc.w",	MSC32_DSP_WAWB, 4, { DSP_X_W_FETCH_OPERATION_32, DSP_Y_W_FETCH_OPERATION_32,                 DSP_ACCUMULATOR_SELECT_32, DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul",	MUL32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul",	MUL32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul.b",	MUL32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul.b",	MUL32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul.d",	MUL32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mul.l",	MUL32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul.l",	MUL32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul.s",	MUL32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mul.ss",	MUL16_SS, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mul.ss",	MUL32_SS, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mul.su",	MUL32_SW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mul.us",	MUL32_UW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mul.uu",	MUL16_UU, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mul.uu",	MUL32_UU, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mul.w",	MUL32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mul.w",	MUL32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "mulfss",	MULFSS32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulfss",	MULFSS32_DSP_WKF, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulfss.l",	MULFSS32_DSP_LF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfss.l",	MULFSS32_DSP_LKF, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfss.w",	MULFSS32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfss.w",	MULFSS32_DSP_WKF, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfsu",	MULFSU32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulfsu.l",	MULFSU32_DSP_LF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfsu.w",	MULFSU32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfus",	MULFUS32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulfus",	MULFUS32_DSP_WKF, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulfus.l",	MULFUS32_DSP_LF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfus.l",	MULFUS32_DSP_LKF, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfus.w",	MULFUS32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfus.w",	MULFUS32_DSP_WKF, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfuu",	MULFUU32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulfuu.l",	MULFUU32_DSP_LF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulfuu.w",	MULFUU32_DSP_WF, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliss",	MULISS32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "muliss",	MULISS32_DSP_WKI, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "muliss.l",	MULISS32_DSP_LI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliss.l",	MULISS32_DSP_LKI, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliss.w",	MULISS32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliss.w",	MULISS32_DSP_WKI, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulisu",	MULISU32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulisu",	MULISU32_DSP_WK, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulisu.l",	MULISU32_DSP_LI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulisu.l",	MULISU32_DSP_LK, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulisu.w",	MULISU32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulisu.w",	MULISU32_DSP_WK, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulius",	MULIUS32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulius",	MULIUS32_DSP_WKI, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "mulius.l",	MULIUS32_DSP_LI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulius.l",	MULIUS32_DSP_LKI, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulius.w",	MULIUS32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulius.w",	MULIUS32_DSP_WKI, 3, { REG_WS_PPP_32, LITERAL_8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliuu",	MULIUU32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "muliuu",	MULIUU32_DSP_WK, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "muliuu.l",	MULIUU32_DSP_LI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliuu.l",	MULIUU32_DSP_LK, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliuu.w",	MULIUU32_DSP_WI, 3, { REG_WD_32_W0_TO_W14, REG_WS_PPP_32, DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "muliuu.w",	MULIUU32_DSP_WK, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32,                DSP_ACCUMULATOR_SELECT_BIT_12 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "mulss",	MULSS16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mulss",	MULSS32_SW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulss",	MULSS32_WK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulss.d",	MULSS32_SD, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulss.d",	MULSS32_DK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulss.l",	MULSS16_L, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mulss.l",	MULSS32_SL, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulss.l",	MULSS32_LK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulss.w",	MULSS16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "mulss.w",	MULSS32_SW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulss.w",	MULSS32_WK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulsu",	MULSU32_SW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulsu",	MULSU32_W, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulsu.d",	MULSU32_SD, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulsu.d",	MULSU32_D, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulsu.l",	MULSU32_SL, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulsu.l",	MULSU32_L, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulsu.w",	MULSU32_SW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulsu.w",	MULSU32_W, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulus",	MULUS32_UW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulus",	MULUS32_WK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulus.d",	MULUS32_UD, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulus.d",	MULUS32_DK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulus.l",	MULUS32_UL, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulus.l",	MULUS32_LK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulus.w",	MULUS32_UW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulus.w",	MULUS32_WK, 3, { REG_WS_PPP_32, LITERAL_8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "muluu",	MULUU16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "muluu",	MULUU32_UW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "muluu",	MULUU32_W, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "muluu.d",	MULUU32_UD, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "muluu.d",	MULUU32_D, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "muluu.l",	MULUU16_L, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "muluu.l",	MULUU32_UL, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "muluu.l",	MULUU32_L, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "muluu.w",	MULUU16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "muluu.w",	MULUU32_UW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "muluu.w",	MULUU32_W, 3, { REG_WS_PPP_32, LITERAL_U8BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "mulw.ss",	MULW16_SS, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "mulw.ss",	MULW32_SSW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "mulw.su",	MULW32_SUW, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "neg",	NEG16_DSP, 1, { DSP_ACCUMULATOR_SELECT_16 },
+		F_ISA32V016| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "neg",	NEG16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "neg",	NEG32_DSP, 1, { DSP_ACCUMULATOR_SELECT_INHERENT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "neg",	NEG32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "neg",	NEG32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg",	NEG32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg",	NEG32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.b",	NEG32_B, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "neg.b",	NEG32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.b",	NEG32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.b",	NEG32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.bz",	NEG32_BZ, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "neg.bz",	NEG32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.bz",	NEG32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.d",	NEG32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "neg.l",	NEG16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "neg.l",	NEG32_L, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "neg.l",	NEG32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.l",	NEG32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.l",	NEG32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.s",	NEG32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "neg.w",	NEG16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "neg.w",	NEG32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "neg.w",	NEG32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.w",	NEG32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neg.w",	NEG32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "neop",	NEOP16, 0, { 0 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "neop",	NEOP32,  0 , { 0 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "nop",	NOP16, 0, { 0 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "nopr",	NOPR32, 0, { 0 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "norm",	NORM32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "norm.l",	NORM32_DSP_L, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "norm.w",	NORM32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "pop",	POP16_POPL2, 1, { REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "pop",	POP32, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "pop.l",	POP16_POPL, 1, { REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "pop.l",	POP16_POPFSR, 1, { REG_F_FSR_FCR_FEAR_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "pop.l",	POP32_POPL3, 1, { REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "pop.l",	POP32_POPFP, 1, { REG_FSRS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "pop.l",	POP32_L, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "push",	PUSH16_PSHL2, 1, { REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "push",	PUSH32, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "push.l",	PUSH16_PSHL, 1, { REG_WS_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "push.l",	PUSH16_PSHFSR, 1, { REG_F_ANY_FSR_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "push.l",	PUSH32_PSHL3, 1, { REG_WS_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "push.l",	PUSH32_PSHFP, 1, { REG_FSRS_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "push.l",	PUSH32_L, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "pwrsav",	PWRSAV16, 1, { LITERAL_1BIT_16 },
+		F_ISA32V016| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "pwrsav",	PWRSAV32, 1, { LITERAL_1BIT_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rcall",	RCALL32_PC, 1, { BRANCH_LABEL_32 },
+		F_ISA32V0| F_PCREL_INSN| F_HAS_BRANCH_FLAG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rcall",	RCALL32_W, 1, { REG_WS_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "repeat",	REPEAT16_LS, 1, { LITERAL_U5BIT_16 },
+		F_ISA32V016| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "repeat",	REPEAT32, 1, { LITERAL_U20BIT_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "repeat",	REPEAT32_W, 1, { REG_WS_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "repeat.w",	REPEAT32_W, 1, { REG_WS_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "reset",	RESET32, 0, { 0 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retfie",	RETFIE16, 0, { 0 },
+		F_ISA32V016| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retfie",	RETFIE32, 0, { 0 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retlw",	RETLW32_W, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retlw.b",	RETLW32_B, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retlw.bz",	RETLW32_BZ, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retlw.l",	RETLW32_L, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "retlw.w",	RETLW32_W, 2, { LITERAL_U16BIT_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "return",	RETURN16, 0, { 0 },
+		F_ISA32V016| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "return",	RETURN32, 0, { 0 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc",	RLC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "rlc",	RLC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc",	RLC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc",	RLC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc",	RLC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "rlc.b",	RLC32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.b",	RLC32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.b",	RLC32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.b",	RLC32_B, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlc.bz",	RLC32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.bz",	RLC32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.bz",	RLC32_BZ, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlc.l",	RLC16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rlc.l",	RLC32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.l",	RLC32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.l",	RLC32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.l",	RLC32_L, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlc.w",	RLC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rlc.w",	RLC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.w",	RLC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.w",	RLC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlc.w",	RLC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlnc",	RLNC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "rlnc",	RLNC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc",	RLNC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc",	RLNC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc",	RLNC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "rlnc.b",	RLNC32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.b",	RLNC32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.b",	RLNC32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.b",	RLNC32_B, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlnc.bz",	RLNC32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.bz",	RLNC32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.bz",	RLNC32_BZ, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlnc.l",	RLNC16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rlnc.l",	RLNC32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.l",	RLNC32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.l",	RLNC32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.l",	RLNC32_L, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rlnc.w",	RLNC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rlnc.w",	RLNC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.w",	RLNC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.w",	RLNC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rlnc.w",	RLNC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrc",	RRC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "rrc",	RRC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc",	RRC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc",	RRC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc",	RRC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "rrc.b",	RRC32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.b",	RRC32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.b",	RRC32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.b",	RRC32_B, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrc.bz",	RRC32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.bz",	RRC32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.bz",	RRC32_BZ, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrc.l",	RRC16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rrc.l",	RRC32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.l",	RRC32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.l",	RRC32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.l",	RRC32_L, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrc.w",	RRC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rrc.w",	RRC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.w",	RRC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.w",	RRC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrc.w",	RRC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrnc",	RRNC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "rrnc",	RRNC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc",	RRNC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc",	RRNC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc",	RRNC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "rrnc.b",	RRNC32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.b",	RRNC32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.b",	RRNC32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.b",	RRNC32_B, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrnc.bz",	RRNC32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.bz",	RRNC32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.bz",	RRNC32_BZ, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrnc.l",	RRNC16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rrnc.l",	RRNC32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.l",	RRNC32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.l",	RRNC32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.l",	RRNC32_L, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "rrnc.w",	RRNC16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "rrnc.w",	RRNC32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.w",	RRNC32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.w",	RRNC32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "rrnc.w",	RRNC32_W, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sac",	SAC32_DSP_WK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sac",	SAC32_DSP_W0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sac",	SAC32_DSP_WK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sac",	SAC32_DSP_W0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sac.l",	SAC32_DSP_LK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.l",	SAC32_DSP_L0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.l",	SAC32_DSP_LK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.l",	SAC32_DSP_L0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.r",	SAC32_DSP_RWK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sac.r",	SAC32_DSP_RWK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sac.w",	SAC32_DSP_WK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.w",	SAC32_DSP_W0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.w",	SAC32_DSP_WK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sac.w",	SAC32_DSP_W0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr",	SACR32_DSP_WW, 3, { DSP_ACCUMULATOR_SELECT_32, REG_WB_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sacr",	SACR32_DSP_WW_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, REG_WB_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sacr",	SACR32_DSP_WK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sacr",	SACR32_DSP_W0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sacr",	SACR32_DSP_WK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sacr",	SACR32_DSP_W0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sacr.l",	SACR32_DSP_LW, 3, { DSP_ACCUMULATOR_SELECT_32, REG_WB_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.l",	SACR32_DSP_LW_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, REG_WB_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.l",	SACR32_DSP_LK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.l",	SACR32_DSP_L0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.l",	SACR32_DSP_LK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.l",	SACR32_DSP_L0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.w",	SACR32_DSP_WW, 3, { DSP_ACCUMULATOR_SELECT_32, REG_WB_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.w",	SACR32_DSP_WW_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, REG_WB_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.w",	SACR32_DSP_WK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.w",	SACR32_DSP_W0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.w",	SACR32_DSP_WK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sacr.w",	SACR32_DSP_W0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "se",	SE16_B2, 2, { REG_WS_16, REG_WD_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "se",	SE32_B4, 2, { G_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "se.b",	SE16_B, 2, { REG_WS_16, REG_WD_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "se.b",	SE32_B3, 2, { G_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "se.w",	SE16_W, 2, { REG_WS_16, REG_WD_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "se.w",	SE32_W, 2, { G_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "setm",	SETM32_W, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm",	SETM32_WUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm",	SETM32_WF, 1, { FILE_REG20_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "setm.b",	SETM32_B, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm.b",	SETM32_BUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm.b",	SETM32_BF, 1, { FILE_REG20_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "setm.l",	SETM32_L, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm.l",	SETM32_LUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm.l",	SETM32_LF, 1, { FILE_REG20_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "setm.w",	SETM32_W, 1, { REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm.w",	SETM32_WUSR, 1, { REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "setm.w",	SETM32_WF, 1, { FILE_REG20_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sftac",	SFTAC32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, G_REG_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sftac",	SFTAC32_DSP_LK, 2, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sftac.l",	SFTAC32_DSP_L, 2, { DSP_ACCUMULATOR_SELECT_32, G_REG_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sftac.w",	SFTAC32_DSP_W, 2, { DSP_ACCUMULATOR_SELECT_32, G_REG_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sin.s",	SIN32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl",	SL16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "sl",	SL32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl",	SL32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl",	SL32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl",	SL32_W1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "sl",	SL32_W, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "sl",	SL32_WK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "sl.b",	SL32_BFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.b",	SL32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.b",	SL32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.b",	SL32_B1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.b",	SL32_B, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.bz",	SL32_BZFWC, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.bz",	SL32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.bz",	SL32_BZ1, 2, { REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.bz",	SL32_BZ, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WBRS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.l",	SL16_L, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sl.l",	SL16_K, 3, { REG_WS_MATCH_16, LITERAL_U5BIT_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sl.l",	SL32_LFWC, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.l",	SL32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.l",	SL32_LF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.l",	SL32_L1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.l",	SL32_L, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.l",	SL32_LK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.w",	SL16_W, 2, { REG_WS_16, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sl.w",	SL32_WFWC, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.w",	SL32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.w",	SL32_WF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sl.w",	SL32_W1, 2, { REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.w",	SL32_W, 3, { REG_WS_PPP_32_ALT, REG_WB_SHIFT_32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sl.w",	SL32_WK, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WD_QQQ_32_ALT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "slac",	SLAC32_DSP_LK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "slac",	SLAC32_DSP_L0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "slac",	SLAC32_DSP_LK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "slac",	SLAC32_DSP_L0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "slac.l",	SLAC32_DSP_LLK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "slac.l",	SLAC32_DSP_LL0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "slac.l",	SLAC32_DSP_LLK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "slac.l",	SLAC32_DSP_LL0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "slm",	SLM32_K, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WS_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "slm.l",	SLM32_K2, 3, { REG_WS_PPP_32_ALT, LITERAL_5BIT_U32, REG_WS_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "slm.l",	SLM32_L, 3, { REG_WS_PPP_32_ALT2, REG_WB_32, REG_WS_32_W0_TO_W13 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sqr",	SQR32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sqr",	SQR32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqr.l",	SQR32_DSP_L, 2, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqr.l",	SQR32_DSP_LAWB, 3, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqr.w",	SQR32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqr.w",	SQR32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrac",	SQRAC32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sqrac",	SQRAC32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrac.l",	SQRAC32_DSP_L, 2, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqrac.l",	SQRAC32_DSP_LAWB, 3, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrac.w",	SQRAC32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqrac.w",	SQRAC32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrn",	SQRN32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sqrn",	SQRN32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrn.l",	SQRN32_DSP_L, 2, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqrn.l",	SQRN32_DSP_LAWB, 3, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrn.w",	SQRN32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqrn.w",	SQRN32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrsc",	SQRSC32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sqrsc",	SQRSC32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrsc.l",	SQRSC32_DSP_L, 2, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqrsc.l",	SQRSC32_DSP_LAWB, 3, { DSP_SQR_L_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrsc.w",	SQRSC32_DSP_W, 2, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sqrsc.w",	SQRSC32_DSP_WAWB, 3, { DSP_SQR_W_FETCH_OPERATION_32, DSP_ACCUMULATOR_SELECT_32,                DSP_WRITEBACK_W_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sqrt.d",	SQRT32_D, 2, { REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sqrt.s",	SQRT32_S, 2, { REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sstep",	SSTEP32, 0, { 0 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "suac",	SUAC32_DSP_L0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "suac",	SUAC32_DSP_L0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "suac",	SUAC32_DSP_LK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "suac",	SUAC32_DSP_LK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "suac.l",	SUAC32_DSP_LL0K, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "suac.l",	SUAC32_DSP_LL0K_ALT2, 2, { DSP_ACCUMULATOR_SELECT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "suac.l",	SUAC32_DSP_LLK, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "suac.l",	SUAC32_DSP_LLK_ALT2, 3, { DSP_ACCUMULATOR_SELECT_32, LITERAL_6BIT_32, REG_WS_PPP_H_32_ALT2 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub",	SUB16_DSP, 1, { DSP_ACCUMULATOR_SELECT_16 },
+		F_ISA32V016| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub",	SUB16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "sub",	SUB32_DSP, 1, { DSP_ACCUMULATOR_SELECT_INHERENT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub",	SUB32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub",	SUB32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub",	SUB32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "sub",	SUB32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub",	SUB32_WFW, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub",	SUB32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub",	SUB32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sub",	SUB32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN| F_GENERATED,
+		"semantics"
+},
+{ "sub",	SUB32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "sub",	SUB32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "sub.b",	SUB32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.b",	SUB32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.b",	SUB32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.b",	SUB32_BFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.b",	SUB32_BFW, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.b",	SUB32_BF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.b",	SUB32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.b",	SUB32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.bz",	SUB32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZFW, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.bz",	SUB32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.d",	SUB32_D, 3, { REG_FB_32_DBL, REG_FS_32_DBL, REG_FD_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.l",	SUB16_L, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sub.l",	SUB16_K, 2, { LITERAL_U5BIT_16, REG_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sub.l",	SUB16_LN, 3, { REG_WS_MATCH_16, LITERAL_U5BIT_16, REG_WDK_MATCH_WS_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sub.l",	SUB32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.l",	SUB32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.l",	SUB32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.l",	SUB32_LFW, 3, { FILE_REG_32_4, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.l",	SUB32_LFW2, 3, { FILE_REG_32_4, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.l",	SUB32_LF, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.l",	SUB32_DSP_LK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub.l",	SUB32_DSP_L0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub.l",	SUB32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.l",	SUB32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.s",	SUB32_S, 3, { REG_FB_32, REG_FS_32, REG_FD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.w",	SUB16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "sub.w",	SUB32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.w",	SUB32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.w",	SUB32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.w",	SUB32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.w",	SUB32_WFW, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.w",	SUB32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "sub.w",	SUB32_DSP_WK, 3, { G_REG_32, LITERAL_6BIT_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub.w",	SUB32_DSP_W0K, 2, { G_REG_32, DSP_ACCUMULATOR_SELECT_32 },
+		F_ISA32V0| F_IS_DSP_INSN,
+		"semantics"
+},
+{ "sub.w",	SUB32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "sub.w",	SUB32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb",	SUBB16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "subb",	SUBB32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb",	SUBB32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb",	SUBB32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb",	SUBB32_KW1, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb",	SUBB32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb",	SUBB32_WFW2, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb",	SUBB32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb",	SUBB32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb",	SUBB32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb.b",	SUBB32_BF2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.b",	SUBB32_BF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.b",	SUBB32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.b",	SUBB32_KB1, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb.b",	SUBB32_BFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.b",	SUBB32_BFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.b",	SUBB32_BF3, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.b",	SUBB32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.b",	SUBB32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZF2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZF3, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.bz",	SUBB32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.l",	SUBB16_L, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subb.l",	SUBB32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.l",	SUBB32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.l",	SUBB32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.l",	SUBB32_KL1, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb.l",	SUBB32_LFW, 3, { FILE_REG_32_4, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.l",	SUBB32_LFW2, 3, { FILE_REG_32_4, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.l",	SUBB32_LF, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.l",	SUBB32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.l",	SUBB32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.w",	SUBB16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subb.w",	SUBB32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.w",	SUBB32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.w",	SUBB32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.w",	SUBB32_KW1, 2, { REG_WD_32, LITERAL_U16BIT_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subb.w",	SUBB32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.w",	SUBB32_WFW2, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.w",	SUBB32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subb.w",	SUBB32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subb.w",	SUBB32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr",	SUBBR16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "subbr",	SUBBR32_WFC2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr",	SUBBR32_WFC, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr",	SUBBR32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr",	SUBBR32_WFW2, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr",	SUBBR32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr",	SUBBR32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subbr",	SUBBR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_BFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_BFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_BF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.b",	SUBBR32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.bz",	SUBBR32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.l",	SUBBR16_L, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_LFW, 3, { FILE_REG_32_4, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_LFW2, 3, { FILE_REG_32_4, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_LF, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.l",	SUBBR32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.w",	SUBBR16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_WFC2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_WFC, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_WFW2, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subbr.w",	SUBBR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr",	SUBR16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "subr",	SUBR16_WZK, 3, { REG_WS_16, LITERAL_ZERO, REG_WD_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "subr",	SUBR32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr",	SUBR32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr",	SUBR32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr",	SUBR32_WFW, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr",	SUBR32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr",	SUBR32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subr",	SUBR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "subr.b",	SUBR32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.b",	SUBR32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.b",	SUBR32_BFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.b",	SUBR32_BFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.b",	SUBR32_BF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.b",	SUBR32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.b",	SUBR32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZFW, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.bz",	SUBR32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.l",	SUBR16_L, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subr.l",	SUBR16_LZK, 3, { REG_WS_16, LITERAL_ZERO, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subr.l",	SUBR32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.l",	SUBR32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.l",	SUBR32_LFW, 3, { FILE_REG_32_4, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.l",	SUBR32_LFW2, 3, { FILE_REG_32_4, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.l",	SUBR32_LF, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.l",	SUBR32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.l",	SUBR32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.w",	SUBR16_W, 3, { REG_WB_MATCH_16, REG_WS_16, REG_WD0_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subr.w",	SUBR16_WZK, 3, { REG_WS_16, LITERAL_ZERO, REG_WD_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "subr.w",	SUBR32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.w",	SUBR32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.w",	SUBR32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.w",	SUBR32_WFW, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.w",	SUBR32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "subr.w",	SUBR32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "subr.w",	SUBR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "swap",	SWAP32_W, 1, { REG_WS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "swap",	SWAP32_W, 1, { REG_WS_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "swap.b",	SWAP32_B, 1, { REG_WS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "swap.bz",	SWAP32_BZ, 1, { REG_WS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "swap.l",	SWAP32_L, 1, { REG_WS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "swap.w",	SWAP32_W, 1, { REG_WS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "tst",	TST32_WFW0, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst",	TST32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst",	TST32_WFF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.b",	TST32_BFW0, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.b",	TST32_BFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.b",	TST32_BFF, 1, { FILE_REG_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.bz",	TST32_BZFW0, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.bz",	TST32_BZFW, 2, { FILE_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.d",	TST32_D, 1, { REG_FS_32_DBL },
+		F_ISA32V0,
+		"semantics"
+},
+{ "tst.l",	TST32_LFW0, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.l",	TST32_LFW, 2, { FILE_REG_32_4, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.l",	TST32_LFF, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.s",	TST32_S, 1, { REG_FS_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "tst.w",	TST32_WFW0, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.w",	TST32_WFW, 2, { FILE_REG_32_2, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "tst.w",	TST32_WFF, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ufex",	UFEX32, 0, { 0 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ulnk",	ULNK16, 0, { 0 },
+		F_ISA32V016| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "ulnk",	ULNK32, 0, { 0 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "urun",	URUN32, 0, { 0 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor",	XOR16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor",	XOR32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor",	XOR32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor",	XOR32_WFW2, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor",	XOR32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor",	XOR32_KWUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_UW, 3, { REG_WB_32, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_UWU, 3, { REG_WB_32, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_WU, 3, { REG_WB_32, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_UWK, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_UWKU, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor",	XOR32_WKU, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0| F_GENERATED,
+		"semantics"
+},
+{ "xor.b",	XOR32_BFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.b",	XOR32_BFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.b",	XOR32_KB, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_BFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.b",	XOR32_BFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.b",	XOR32_BF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.b",	XOR32_KBUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_B, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_UB, 3, { REG_WB_32, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_UBU, 3, { REG_WB_32, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_BU, 3, { REG_WB_32, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_BK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_UBK, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_UBKU, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.b",	XOR32_BKU, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZFC2, 2, { FILE_REG_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZFC, 1, { FILE_REG_32 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.bz",	XOR32_KBZ, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZFW, 3, { FILE_REG_32, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZFW2, 3, { FILE_REG_32, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZF, 2, { FILE_REG_32, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.bz",	XOR32_KBZUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZ, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_UBZ, 3, { REG_WB_32, REG_USRMODE_PPP, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_UBZK, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.bz",	XOR32_BZKU, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR16_L, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "xor.l",	XOR32_LFC2, 2, { FILE_REG_32_4, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.l",	XOR32_LFC, 1, { FILE_REG_32_4 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.l",	XOR32_KL, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_LFW, 3, { FILE_REG_32_4, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.l",	XOR32_LFW2, 3, { FILE_REG_32_4, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.l",	XOR32_LF, 2, { FILE_REG_32_4, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.l",	XOR32_KLUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_L, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_UL, 3, { REG_WB_32, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_ULU, 3, { REG_WB_32, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_LU, 3, { REG_WB_32, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_LK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_ULK, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_ULKU, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.l",	XOR32_LKU, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR16_W, 3, { REG_WS_MATCH_16, REG_WB_MATCH_16, REG_WD_MATCH_16 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "xor.w",	XOR32_F2, 2, { FILE_REG_32_2, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.w",	XOR32_F, 1, { FILE_REG_32_2 },
+		F_ISA32V0| F_GENERATED| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.w",	XOR32_KW, 2, { LITERAL_U16BIT_32, REG_WD_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_WFW, 3, { FILE_REG_32_2, REG_WD_32, REG_W0_MATCH },
+		F_ISA32V0| F_HAS_IMPLIED_WREG| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.w",	XOR32_WFW2, 3, { FILE_REG_32_2, REG_WN_32, REG_WN_32_MATCH },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.w",	XOR32_WF, 2, { FILE_REG_32_2, REG_WD_32 },
+		F_ISA32V0| F_CANNOT_FOLLOW_REPEAT,
+		"semantics"
+},
+{ "xor.w",	XOR32_KWUSR, 2, { LITERAL_U16BIT_32, REG_USRBIT },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_W, 3, { REG_WB_32, REG_WS_PPP_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_UW, 3, { REG_WB_32, REG_USRMODE_PPP, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_UWU, 3, { REG_WB_32, REG_USRMODE_PPP, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_WU, 3, { REG_WB_32, REG_WS_PPP_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_WK, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_UWK, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_WD_QQQ_32 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_UWKU, 3, { REG_USRMODE_PPP, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "xor.w",	XOR32_WKU, 3, { REG_WS_PPP_32, LITERAL_U7BIT_32, REG_USRMODE_QQQ },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ze",	ZE16_BZ2, 2, { REG_WS_16, REG_WD_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "ze",	ZE32_BZ4, 2, { G_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ze.bz",	ZE16_BZ, 2, { REG_WS_16, REG_WD_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "ze.bz",	ZE32_BZ3, 2, { G_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},
+{ "ze.w",	ZE16_W, 2, { REG_WS_16, REG_WD_16_W0_TO_W14 },
+		F_ISA32V016,
+		"semantics"
+},
+{ "ze.w",	ZE32_W, 2, { G_REG_32, REG_WD_32_W0_TO_W14 },
+		F_ISA32V0,
+		"semantics"
+},

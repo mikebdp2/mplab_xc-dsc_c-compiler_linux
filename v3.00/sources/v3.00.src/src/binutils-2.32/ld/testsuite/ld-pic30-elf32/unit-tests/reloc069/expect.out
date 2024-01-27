@@ -1,0 +1,6 @@
+t1.o: in function `__reset':
+(.text+0x0): Link Error: relocation truncated to fit: UNSIGNED 10 against `symB2'
+(.text+0x2): Link Error: relocation truncated to fit: UNSIGNED 10 against `symB3'
+t2.o: in function `__t2':
+(.text+0x0): Link Error: relocation truncated to fit: UNSIGNED 10 against `symA2'
+(.text+0x2): Link Error: relocation truncated to fit: UNSIGNED 10 against `symA3'

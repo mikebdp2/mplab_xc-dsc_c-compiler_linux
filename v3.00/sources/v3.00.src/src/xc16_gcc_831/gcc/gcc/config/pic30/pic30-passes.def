@@ -1,0 +1,31 @@
+/* dsPIC passes declarations.
+   Copyright (C) 2022 Free Software Foundation, Inc.
+   Contributed by Microchip Technology, Inc.
+
+   This file is part of GCC.
+
+   GCC is free software; you can redistribute it and/or modify it
+   under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3, or (at your option)
+   any later version.
+
+   GCC is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with GCC; see the file COPYING3.  If not see
+   <http://www.gnu.org/licenses/>.  */
+
+INSERT_PASS_AFTER (pass_dse, 1, pass_optimize_widening_mul);
+INSERT_PASS_BEFORE (pass_instantiate_virtual_regs, 1, pass_merge_accumulators);
+INSERT_PASS_AFTER (pass_expand, 1, pass_data_pic30_split_memrefs);
+INSERT_PASS_BEFORE (pass_combine, 1, pass_validate_dsp_instructions);
+INSERT_PASS_AFTER (pass_combine, 1, pass_cse3);
+INSERT_PASS_AFTER (pass_reload, 1, pass_track_sfrs);
+INSERT_PASS_AFTER (pass_if_after_reload, 1, pass_split_for_xc16);
+INSERT_PASS_AFTER (pass_sched2, 1, pass_peephole2);
+INSERT_PASS_BEFORE (pass_stack_regs, 1, pass_RAW_count);
+INSERT_PASS_BEFORE (pass_stack_regs, 1, pass_PSV_PSV_count);
+INSERT_PASS_AFTER (pass_free_cfg, 1, pass_xc_coverage);

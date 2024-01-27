@@ -1,0 +1,67 @@
+#! /bin/sh
+
+#
+# CONFIGURATION SECTION
+#
+if [ -z "$PIC30_CD" ]; then
+    echo "Environmental variable PIC30_CD must be set up.";
+    exit 1;
+fi
+
+GCC30="$PIC30_CD/bin/xc16-gcc -omf=elf"
+OBJDUMP="$PIC30_CD/bin/xc16-objdump -omf=elf"
+
+#
+# END CONFIGURATION
+#
+
+# clean up
+rm -f t1.o test.out
+
+# process args
+vflag=off
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -v)  vflag=on;;
+    esac
+    shift
+done
+
+$GCC30 -mcpu=GENERIC-16DSP-AA -c t1.s || exit 99
+err=$?
+if [ $vflag = "on" ]; then
+    echo "$GCC30 -mcpu=GENERIC-16DSP-AA -c t1.s"
+    echo $err
+fi
+
+if [ $vflag = "on" ]; then
+    $OBJDUMP -d t1.o || exit 99
+    echo
+fi
+
+rm -f test.out
+$OBJDUMP -d t1.o > test.out
+
+echo
+echo `head -1 info.txt`
+
+if [ $vflag = "on" ]; then
+    diff -b -B test.out expect.out
+else
+    diff -b -B test.out expect.out > /dev/null
+fi
+
+
+if [ $? -ne 0 ]; then
+    echo "ERRORs Detected!!"
+    echo
+    exit 199
+fi
+
+# clean up again
+rm -f t1.o test.out
+
+echo "All Tests Pass"
+echo
+exit 0
